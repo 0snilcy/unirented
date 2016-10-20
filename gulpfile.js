@@ -50,7 +50,7 @@ gulp.task("serve", function() {
     ui: false
   });
   gulp.watch("src/sass/**/*.{scss,sass}", ["style"]);
-  gulp.watch(["src/*.pug", "src/_inc/**/*.pug"], ["views"]);
+  gulp.watch(["src/*.pug", "src/pug/**/*.pug"], ["views"]);
   gulp.watch("build/*.html").on("change", server.reload);
   // gulp.watch("src/*.html").on("change", server.reload);
 });
@@ -97,7 +97,7 @@ gulp.task("build", function(fn) {
 
 gulp.task("copy", function() {
   return gulp.src([
-      "src/fonts/**/*.{woff,woff2}",
+      "src/fonts/**/*.{woff,woff2,ttf,eot}",
       "src/img/**",
       "src/js/**",
       "src/*.html"
