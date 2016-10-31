@@ -1,18 +1,17 @@
 @import
-  '../../node_modules/normalize.scss/normalize',
-  '../../node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
-
-@import
-  'base/base';
-
-@import
-  'pages/test';
-
-// @import
-//   'layout/grid';
+  '../../node_modules/normalize.scss/normalize';
 
 @import
   'utils/variables',
-  'utils/functions',
-  'utils/mixins',
-  'utils/helpers';
+  'utils/mixins';
+
+@import
+  'base/font',
+  'base/base';
+
+@import
+  'grid/media',
+  'grid/grid';
+
+@import
+  'components/main-header';

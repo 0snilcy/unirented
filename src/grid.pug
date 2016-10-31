@@ -5,13 +5,14 @@ block title
 
 mixin grid(items)
   .container
-    .grid
+    .row
       - var x = items;
       - for (var i = 0; i < x; i++)
-        div(class='grid__col-'+(12/x)) col-#{12/x}
+        div(class='col-m-6 col-'+(12/x)) col-#{12/x}
 
 block content
   +grid(3)
   +grid(6)
+
 
 

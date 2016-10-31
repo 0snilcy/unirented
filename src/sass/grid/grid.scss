@@ -1,0 +1,53 @@
+@mixin clearfix() {
+  &::before {
+    display: table;
+    content: " ";
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+@mixin container($gutter: $grid-gutter-width) {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: floor(($gutter / 2));
+  padding-right: ceil(($gutter / 2));
+
+  width: $width-desktop;
+
+  @include mobile {
+    width: auto;
+  }
+}
+
+@mixin row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    flex: 0 1 (100% / $grid-columns * $i);
+  }
+
+  @include mobile {
+    .col-m-#{$i} {
+      flex: 0 1 (100% / $grid-columns * $i);
+    }
+  }
+}
+
+@mixin col($cols) {
+  flex: 0 1 (100% / $grid-columns * $cols);
+}
+
+.container {
+  @include container();
+}
+
+.row {
+  @include row();
+}
+
