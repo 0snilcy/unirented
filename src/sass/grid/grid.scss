@@ -25,22 +25,33 @@
 @mixin row {
   display: flex;
   flex-flow: row wrap;
+  margin-right: -$grid-gutter-width/2;
+  margin-left: -$grid-gutter-width/2;
 }
 
 @for $i from 1 through $grid-columns {
   .col-#{$i} {
     flex: 0 1 (100% / $grid-columns * $i);
+    min-height: 1px;
+    padding-left: $grid-gutter-width/2;
+    padding-right: $grid-gutter-width/2;
   }
 
   @include mobile {
     .col-m-#{$i} {
       flex: 0 1 (100% / $grid-columns * $i);
+      min-height: 1px;
+      padding-left: $grid-gutter-width/2;
+      padding-right: $grid-gutter-width/2;
     }
   }
 }
 
 @mixin col($cols) {
   flex: 0 1 (100% / $grid-columns * $cols);
+  min-height: 1px;
+  padding-left: $grid-gutter-width/2;
+  padding-right: $grid-gutter-width/2;
 }
 
 .container {
