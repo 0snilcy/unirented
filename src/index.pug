@@ -1,7 +1,15 @@
 extends pug/layout/base.pug
 
 block title
-  title Index Page
+  title Главная страница
 
 block content
-  h1 Hellow, world!
+  include pug/components/features
+  include pug/components/rent/rent
+  include pug/components/works/works
+  include pug/components/fresh/fresh
+  include pug/components/reviews/reviews
+
+
+
+

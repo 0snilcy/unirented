@@ -1,0 +1,35 @@
+.questionnaire-data
+  .questionnaire-data__icon
+    svg(aria-hidden="true")
+      use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#11")
+
+  .questionnaire-data__wrap
+    .questionnaire-data__title Арендуем автовышку
+    .questionnaire-data__subtitle Помогите нам подобрать для вас автовышку по самой выгодной цене, ответив на несколько простых вопросов
+    ul.questionnaire-data__list
+      li.questionnaire-data__item
+        .questionnaire-data__status
+          svg(aria-hidden="true")
+            use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#questionnaire_focus")
+        | Контактная информация
+      li.questionnaire-data__item.questionnaire-data__item--complete
+        .questionnaire-data__status
+          svg(aria-hidden="true")
+            use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#questionnaire_done")
+        | Время аренды
+      li.questionnaire-data__item.questionnaire-data__item--disabled Место
+      li.questionnaire-data__item.questionnaire-data__item--disabled Технические характеристики
+
+    .data-result
+      .data-result__title Кран-манипулятор
+      .data-result__subtitle
+        .data-result__subtitle-date 28 августа, с 12:00 до 16:00
+        .data-result__subtitle-info Стрела от 10 м. и 4 т., борт от 20 т.
+
+      .data-result__item-title Мы почти уверены что это будет
+      .data-result__item
+        img.data-result__item-pick(src="img/data-result-item.png")
+        a.data-result__item-link.pseudo-link(href="#") Unic UR1504
+
+
+

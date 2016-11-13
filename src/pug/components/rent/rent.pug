@@ -1,0 +1,145 @@
+include rent-item
+
+.mobile-btn.container
+  .btn-add
+    button.btn-add__item(type="button") Размеситить заказ
+    span.btn-add__plus +
+
+section.rent
+  .rent__title Аренда&nbsp;
+    a.rent__title-link(href="#") спецтехники
+  .rent__subtitle.prompt.prompt--question Вы владелец спецтехники?&nbsp;
+    a.rent__subtitle-link.link(href="#") Получайте заказы
+  a.rent__btn(href="#", data-title="Заказать", data-post="btn") Разместить заказ
+  .rent__main
+    +rent-item(
+      "Экскаваторы",
+      "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+      "1"
+    )
+    +rent-item(
+      "Манипуляторы",
+      "Hidromek, MT3, Case, Hyndai, Caterpillar, Komatsu",
+      "2"
+    )
+    +rent-item(
+      "Автовышки",
+      "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+      "3"
+    )
+    +rent-item(
+      "Эвакуаторы",
+      "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+      "4"
+    )
+    +rent-item(
+      "Грузовые автомобили",
+      "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+      "5"
+    )
+    +rent-item(
+      "Автокраны",
+      "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+      "6"
+    )
+
+    +rent-item(
+      "Автобетононасосы",
+      "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+      "7"
+    )
+    +rent-item(
+      "Тралы",
+      "Hidromek, MT3, Case, Hyndai, Caterpillar, Komatsu",
+      "8"
+    )
+    +rent-item(
+      "Автогрейдеры",
+      "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+      "9"
+    )
+    +rent-item(
+      "Дорожная техника",
+      "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+      "10"
+    )
+    +rent-item(
+      "Подъёмно-транспортная техника",
+      "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+      "11"
+    )
+    +rent-item(
+      "Грузовики",
+      "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+      "12"
+    )
+  .rent__hide(data-hide="wrap")
+    .rent__main
+      +rent-item(
+        "Экскаваторы",
+        "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+        "1"
+      )
+      +rent-item(
+        "Манипуляторы",
+        "Hidromek, MT3, Case, Hyndai, Caterpillar, Komatsu",
+        "2"
+      )
+      +rent-item(
+        "Автовышки",
+        "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+        "3"
+      )
+      +rent-item(
+        "Эвакуаторы",
+        "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+        "4"
+      )
+      +rent-item(
+        "Грузовые автомобили",
+        "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+        "5"
+      )
+      +rent-item(
+        "Автокраны",
+        "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+        "6"
+      )
+
+      +rent-item(
+        "Автобетононасосы",
+        "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+        "7"
+      )
+      +rent-item(
+        "Тралы",
+        "Hidromek, MT3, Case, Hyndai, Caterpillar, Komatsu",
+        "8"
+      )
+      +rent-item(
+        "Автогрейдеры",
+        "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+        "9"
+      )
+      +rent-item(
+        "Дорожная техника",
+        "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+        "10"
+      )
+      +rent-item(
+        "Подъёмно-транспортная техника",
+        "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+        "11"
+      )
+      +rent-item(
+        "Грузовики",
+        "New Holland, Hidromek, MT3, Case, Hyndai, Komatsu",
+        "12"
+      )
+  footer.rent__footer
+    .rent__footer-title.prompt.prompt--statement
+      strong Подсказка.
+      |  Показана наиболее популярная техника
+    button.rent__footer-btn.btn(type="button", data-hide="btn") Показать всю технику
+
+  include ../posted

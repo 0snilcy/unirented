@@ -1,0 +1,19 @@
+include reviews-item
+
+section.reviews
+  .reviews__container
+    header.reviews__header
+      .reviews__title
+        span.reviews__title-current 4.5
+        span.reviews__title-all /5
+        strong  По оценке 201 клиента
+      .prompt.prompt--question Нам важно&nbsp;
+        a.pseudo-link(href="#") ваше мнение
+    .reviews__main(data-slider="mobile")
+      +reviews-item("Егор Бородач", "Ответственный работник")
+      +reviews-item("Зинаида", "Владелец спецтехники")
+      +reviews-item("Константин И.", "Довольный клиент")
+    .reviews__footer
+      a.reviews__btn.btn(href="#") Оставить отзыв
+
+

@@ -5,5 +5,24 @@ html.no-js(lang="en")
       title Default title
     include head
   body
-    block content
-      h1 Default content
+    .svg-sprite
+      include ../components/symbols
+
+    include ../components/main-header/main-header
+
+    block main
+      main.main
+        block content
+          h1 Default content
+
+    include ../components/main-footer
+
+    .overlay
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js")
+    script(src="js/ion.rangeSlider.min.js")
+    script(src="js/jquery.maskedinput.min.js")
+    script(src="js/owl.carousel.min.js")
+    script(src="js/perfect-scrollbar.jquery.min.js")
+    script(src="js/script.js")
+

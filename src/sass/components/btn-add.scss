@@ -1,0 +1,54 @@
+.btn-add {
+  display: flex;
+  flex-direction: row;
+  background-color: $color-main;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover {
+    background-color: #f59203;
+  }
+
+  &__item {
+    background-color: transparent;
+    border: none;
+    text-transform: uppercase;
+    color: #563301;
+    font-weight: bold;
+    padding: 8px 11px;
+    text-shadow: 0 1px 0 $color-main-lighten;
+    flex-grow: 1;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__plus {
+    font-size: 0;
+    display: block;
+    width: 42px;
+    padding: 8px 11px;
+    border-left: 1px solid #dd8200;
+    background-color: transparent;
+
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 12px;
+      background-color: #563301;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+}

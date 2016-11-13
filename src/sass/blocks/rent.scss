@@ -1,0 +1,163 @@
+.rent {
+  @include container();
+  padding-bottom: 50px;
+  margin-top: 52px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid $color-gray-91;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+
+  &__title {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: 17px;
+    margin-bottom: 58px;
+
+    @include mobile {
+      flex-grow: 1;
+    }
+
+    @include desktop {
+      font-size: 1.5em;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $color-text;
+
+      @include desktop {
+        border-bottom: 1px solid $color-main;
+      }
+
+      &:hover {
+        border: none;
+      }
+    }
+  }
+
+  &__subtitle {
+    flex-grow: 1;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    @include mobile {
+      order: 100;
+      text-align: center;
+    }
+
+    &-link {
+
+    }
+  }
+
+  &__btn {
+    background-color: transparent;
+    color: $color-main;
+    border: 1px solid currentColor;
+    text-decoration: none;
+
+    @include mobile {
+      padding: 3px 6px;
+      font-size: 0;
+
+      &::before {
+        content: attr(data-title);
+        font-size: 1rem;
+      }
+    }
+
+    @include desktop {
+      padding: 8px 10px;
+      text-transform: uppercase;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__main {
+    @include row();
+  }
+
+  &__hide {
+    display: none;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 100%;
+
+    &-title {
+      flex-basis: 50%;
+      padding-right: 110px;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &-btn {
+      margin-right: auto;
+
+      @include mobile {
+        margin-left: auto;
+        margin-bottom: 11px;
+      }
+
+      @include desktop {
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+.rent-item {
+  @include col(2);
+
+  @include mobile {
+    @include col(6);
+
+  }
+
+  padding: 0 $grid-gutter-width/2;
+  text-align: center;
+  margin-bottom: 30px;
+
+  &__pick {
+    margin-bottom: 8px;
+
+    svg {
+      width: 70px;
+      height: 70px;
+
+      fill: $color-main;
+    }
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    border: none;
+  }
+
+  &__desc {
+    font-size: .813em;
+    color: $color-gray-64;
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+

@@ -12,46 +12,54 @@
 @mixin container($gutter: $grid-gutter-width) {
   margin-right: auto;
   margin-left: auto;
-  padding-left: floor(($gutter / 2));
-  padding-right: ceil(($gutter / 2));
 
-  width: $width-desktop;
+  @include desktop {
+    width: $width-desktop;
+    padding-left: floor(($gutter / 2));
+    padding-right: ceil(($gutter / 2));
+  }
 
   @include mobile {
     width: auto;
+    padding-left: 2%;
+    padding-right: 2%;
   }
 }
 
 @mixin row {
   display: flex;
   flex-flow: row wrap;
-  margin-right: -$grid-gutter-width/2;
-  margin-left: -$grid-gutter-width/2;
+
+  margin-right: -($grid-gutter-width / 2);
+  margin-left: -($grid-gutter-width / 2);
 }
 
 @for $i from 1 through $grid-columns {
   .col-#{$i} {
     flex: 0 1 (100% / $grid-columns * $i);
+    max-width: (100% / $grid-columns * $i);
     min-height: 1px;
-    padding-left: $grid-gutter-width/2;
-    padding-right: $grid-gutter-width/2;
+
+    padding-left: floor(($grid-gutter-width / 2));
+    padding-right: ceil(($grid-gutter-width / 2));
   }
 
   @include mobile {
     .col-m-#{$i} {
       flex: 0 1 (100% / $grid-columns * $i);
+      max-width: (100% / $grid-columns * $i);
       min-height: 1px;
-      padding-left: $grid-gutter-width/2;
-      padding-right: $grid-gutter-width/2;
+
+      padding-left: floor(($grid-gutter-width / 2));
+      padding-right: ceil(($grid-gutter-width / 2));
     }
   }
 }
 
 @mixin col($cols) {
   flex: 0 1 (100% / $grid-columns * $cols);
+  max-width: 100% / $grid-columns * $cols;
   min-height: 1px;
-  padding-left: $grid-gutter-width/2;
-  padding-right: $grid-gutter-width/2;
 }
 
 .container {

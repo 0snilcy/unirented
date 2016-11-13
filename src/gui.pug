@@ -1,0 +1,331 @@
+extends pug/layout/base.pug
+
+block title
+  title GUI
+
+block content
+  .container
+    .gui
+      .row
+        .col-4.col-m-12
+          h1 Первый уровень
+          h2 Второй уровень
+          h3 Третий уровень
+          h4 Четвертый уровень
+          h5 Пятый уровень
+          h6 Шестой уровень
+
+        .col-4.col-m-12
+          p.
+            Родился на улице Герцена, в гастрономе № 22. Известный экономист, по призванию своему — библиотекарь.
+          p
+            strong.
+              Родился на улице Герцена, в гастрономе № 22. Известный экономист, по призванию своему — библиотекарь.
+          p
+            i.
+              Родился на улице Герцена, в гастрономе № 22. Известный экономист, по призванию своему — библиотекарь.
+          p.small.
+            Родился на улице Герцена, в гастрономе № 22. Известный экономист, по призванию своему — библиотекарь.
+
+        .col-4.col-m-12
+          p(disabled).
+            Родился на улице Герцена, в гастрономе № 22. Известный экономист, по призванию своему — библиотекарь.
+          p(disabled)
+            strong.
+              Родился на улице Герцена, в гастрономе № 22. Известный экономист, по призванию своему — библиотекарь.
+          p(disabled)
+            i.
+              Родился на улице Герцена, в гастрономе № 22. Известный экономист, по призванию своему — библиотекарь.
+          p(disabled).small.
+            Родился на улице Герцена, в гастрономе № 22. Известный экономист, по призванию своему — библиотекарь.
+
+      .row
+        .col-4.col-m-12
+          input.input(placeholder="подсказка")
+          input.input.input--error(placeholder="подсказка")
+          input.input(placeholder="подсказка", disabled)
+        .col-4.col-m-12
+          .input-helper(data-before="от", data-after="т")
+            input.input.input-helper__input(type="number")
+          .input-helper(data-before="от", data-after="т")
+            input.input.input--error.input-helper__input(type="number")
+          .input-helper(data-before="от", data-after="т")
+            input.input.input-helper__input(type="number", disabled)
+        .col-4.col-m-12
+          .range(
+            data-type="single"
+            data-min="10",
+            data-max="20",
+            data-from="15")
+          .range(
+            data-type="double"
+            data-min="10",
+            data-max="20",
+            data-to="18",
+            data-from="15")
+          .input-helper.input-helper--range
+            input.input.input-helper__input(type="number")
+            .range(
+              data-type="single"
+              data-min="0",
+              data-hide-min-max="true",
+              data-max="20",
+              data-from="10")
+      .row
+        .col-4.col-m-12
+          .select
+            select.select__item
+              option Один
+              option Два
+              option Три
+              option Четыре
+        .col-4.col-m-12
+          .select.select--error
+            select.select__item
+              option Один
+              option Два
+              option Три
+              option Четыре
+      .row
+        .col-4.col-m-6
+          .row
+            .col-12.col-m-12
+              button.btn(type="button") Кнопка
+              button.btn(type="button", disabled) Заблокирована
+          .row
+            .col-12.col-m-12
+              button.btn.btn--color(type="button") Кнопка
+              button.btn.btn--color(type="button", disabled) Заблокирована
+          .row
+            .col-12.col-m-12
+              button.btn.btn--small(type="button") Кнопка
+              button.btn.btn--small(type="button", disabled) Заблокирована
+          .row
+            .col-12.col-m-12
+              button.btn.btn--small.btn--color(type="button") Кнопка
+              button.btn.btn--small.btn--color(type="button", disabled) Заблокирована
+        .col-4.col-m-6
+          a.link(href="#") Ссылка тип 1
+          a.pseudo-link(href="#") Псевдо-ссылка
+        .col-4.col-m-12
+          .checkbox
+            input(type="checkbox", id="checkbox-1").checkbox__input
+            label(for="checkbox-1").checkbox__label
+          .checkbox
+            input(type="checkbox", id="checkbox-2").checkbox__input
+            label(for="checkbox-2").checkbox__label
+          .checkbox
+            input(type="checkbox", id="checkbox-3", disabled).checkbox__input
+            label(for="checkbox-3").checkbox__label
+          .radio
+            input(type="radio", id="radio-1", name="test").radio__input
+            label(for="radio-1").radio__label
+          .radio
+            input(type="radio", id="radio-2", name="test").radio__input
+            label(for="radio-2").radio__label
+          .radio
+            input(type="radio", id="radio-3", name="test", disabled, checked).radio__input
+            label(for="radio-3").radio__label
+      .row
+        .col-5.col-m-12
+          .pagination
+            .pagination__wrap
+              a(href="#").pagination__swift ← Назад
+              a(href="#").pagination__swift Дальше →
+            .pagination__list
+              a(href="#").pagination__item 1
+              span.pagination__more
+                a(href="#").pagination__item 10
+                a(href="#").pagination__item.pagination__item--curent 11
+                a(href="#").pagination__item 12
+                a(href="#").pagination__item 13
+                a(href="#").pagination__item 14
+              a(href="#").pagination__item 230
+        .col-7.col-m-12
+          .row
+            .col-12.col-m-12
+              .tabs
+                button(type="button").tabs__hidden
+                .tabs__wrap
+                  button(type="button").tabs__item.tabs__item--curent Один день
+                  button(type="button").tabs__item Несколько дней
+                  button(type="button").tabs__item По договоренности
+            .col-12.col-m-12
+              .tabs
+                button(type="button").tabs__hidden
+                .tabs__wrap
+                  button(type="button").tabs__item.tabs__item--curent Один день
+                  button(type="button").tabs__item Несколько дней
+                  button(type="button").tabs__item По договоренности
+      .row
+        .col-6.col-m-12
+          table.table
+            tr
+              th №
+              th Первая кологка
+              th Вторая кологка
+              th Третья кологка
+            tr
+              td 1
+              td zero
+              td zero
+              td zero
+            tr
+              td 2
+              td one
+              td one
+              td one
+            tr
+              td 3
+              td two
+              td two
+              td two
+            tr
+              td 4
+              td three
+              td three
+              td three
+            tr
+              td 5
+              td four
+              td four
+              td four
+
+        .col-6.col-m-12
+          table.table.table--small-head
+            tr
+              th №
+              th Первая кологка
+              th Вторая кологка
+              th Третья кологка
+            tr
+              td 1
+              td zero
+              td zero
+              td zero
+            tr
+              td 2
+              td one
+              td one
+              td one
+            tr
+              td 3
+              td two
+              td two
+              td two
+            tr
+              td 4
+              td three
+              td three
+              td three
+            tr
+              td 5
+              td four
+              td four
+              td four
+
+      .row
+        .col-3.col-m-6
+          .hint.hint--top Для продолжения вы можете нажать эту кнопку
+        .col-3.col-m-6
+          .hint.hint--right Для продолжения вы можете нажать эту кнопку
+        .col-3.col-m-6
+          .hint.hint--bottom Для продолжения вы можете нажать эту кнопку
+        .col-3.col-m-6
+          .hint.hint--left Для продолжения вы можете нажать эту кнопку
+
+      .row
+        .col-6.col-m-12
+          .modal.modal--gray
+            .modal__close Закрыть
+            .modal__title Таинственный раздел
+            .modal__desc Невероятно, но в него можно войти лишь нажав на эту кнопку
+            .modal__btns
+              button.btn.btn--small.btn--color(type="button") Войти
+              button.btn.btn--small(type="button") Или нет
+        .col-6.col-m-12
+          .progress
+            .progress__bar(data-value="56%", style="width: 56%")
+          .progress.progress--small
+            .progress__bar(data-value="92%", style="width: 92%")
+          .progress.progress--complete
+            .progress__bar(data-value="100%", style="width: 100%", data-complete="Готово")
+
+          .progress.progress--simple
+            .progress__bar(data-value="77%", style="width: 77%")
+          .progress.progress--simple.progress--colorless
+            .progress__bar(data-value="56%", style="width: 56%")
+
+      .row
+        .col-12
+          .alert
+            .alert__close Закрыть
+            .alert__content
+              p
+                strong Бульдозер пришвартован, капитан,
+              button.btn(type="button") Благодарю
+        .col-12
+          .alert
+            .alert__close Закрыть
+            .alert__content
+              p
+                strong Бульдозер пришвартован, капитан,
+        .col-12
+          .alert.alert--warning
+            .alert__close Закрыть
+            .alert__content
+              p
+                strong Очень тревожно:
+                | С вашей заявкой происходит что-то волнительное
+        .col-12
+          .alert.alert--danger
+            .alert__close Закрыть
+            .alert__content
+              p
+                strong Заявка не опубликована:
+                | Вы забыли указать пол и возраст вашего бульдозера
+        .col-12
+          .alert.alert--success
+            .alert__close Закрыть
+            .alert__content
+              p Все хорошо
+      .row
+        .col-8.col-m-12
+          .modal
+            .modal__close Закрыть
+            .modal__desc
+              p
+                strong Что мы можем сказать о бульдозерах?
+              p.
+                Бухгалтер работает по другой линии — по линии библиотекаря. Потому что не воздух будет, академик будет! Ну вот можно сфотографировать Мурманский полуостров. Можно стать воздушным асом. Можно стать воздушной планетой. И будешь уверен, что эту планету примут по учебнику. Значит, на пользу физики пойдет одна планета.
+
+              p.
+                Величина, оторванная в область дипломатии, дает свои колебания на всю дипломатию. А Илья Муромец дает колебания только на семью на свою. Спичка в библиотеке работает.
+
+              p.
+                В кинохронику ходят и зажигают в кинохронике большой лист. В библиотеке маленький лист разжигают. Огонь… эээ… будет вырабатываться гораздо легче, чем учебник крепкий. А крепкий учебник будет весомее, чем гастроном на улице Герцена.
+            .modal__btns
+              button.btn.btn--small.btn--color(type="button") Войти
+              button.btn.btn--small(type="button") Или нет
+
+        .col-4.col-m-12
+          .modal
+            .modal__close Закрыть
+            .modal__desc
+              p
+                strong Небезопасный пароль
+              p.
+                Пароль должен содержать цифры, буквы, завязку, развитие, кульминацию  и неожиданный финал
+            .modal__btns
+              button.btn.btn--small(type="button") Я вник и готов к исполнению
+
+          .modal
+            .modal__close Закрыть
+            .modal__desc
+              p
+                strong Этот бульдозер не хочешь ты
+            .modal__btns
+              button.btn.btn--small.btn--color(type="button") Я не хочу этот бульдозер
+
+
+

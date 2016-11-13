@@ -1,0 +1,29 @@
+.questionnaire-setting__step-3
+  .questionnaire-setting__subtitle Шаг 3 из 4
+  .questionnaire-setting__title Место
+
+
+  .questionnaire-setting__place
+    .tabs
+      button(type="button").tabs__hidden
+      .tabs__wrap
+        button(type="button").tabs__item.tabs__item--curent Точка
+        button(type="button").tabs__item Маршрут
+
+  .questionnaire-setting__map
+    script(
+      type="text/javascript",
+      charset="utf-8",
+      src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=g0Ra1pmNYRYj3JPym3dCEyzE5ArZ9pWW&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true",
+      async
+    )
+
+  .questionnaire-setting__wrap
+    .questionnaire-setting__back Назад,&nbsp;
+      a.pseudo-link(href="#", data-step="back", data-content="Назад") ко второму шагу
+      button.questionnaire-setting__btn.btn(type="button", data-step="3", data-content="Продолжить") Следующий вопрос
+
+
+
+
+

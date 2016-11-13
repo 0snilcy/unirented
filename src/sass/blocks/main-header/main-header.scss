@@ -1,0 +1,734 @@
+$mobileMenuTop: 12px;
+
+// Index
+$index-menu: 25;
+$index-menuWrap: 5;
+$index-menuBtn: 10;
+$index-menuUser: 5;
+
+.main-header {
+  line-height: 1.625;
+
+  @include mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: $index-menu;
+    height: 0;
+
+    &__logo {
+      display: none;
+    }
+  }
+
+  &__wrap {
+    @include mobile {
+      position: relative;
+      left: -100%;
+      transition: left .3s ease-in-out;
+
+      &--active {
+        left: 0;
+        z-index: $index-menuWrap;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__mobile {
+    display: none;
+
+    @include mobile {
+      background-color: $color-gray-95;
+      display: block;
+      height: 50px;
+      min-width: $width-mobile
+    }
+  }
+
+  &__logo-fixed {
+    display: none;
+
+    @include mobile {
+      display: block;
+      position: fixed;
+      z-index: 5;
+      top: $mobileMenuTop;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 24px;
+
+
+      .main-header--input & {
+        z-index: -1;
+      }
+    }
+  }
+
+  &__menu-btn {
+    display: none;
+
+    @include mobile {
+      display: block;
+      font-size: 0;
+      width: 22px;
+      height: 18px;
+      margin-left: 2%;
+      padding: 0;
+      top: 15px;
+      position: relative;
+      z-index: $index-menuBtn;
+      background-color: transparent;
+      border: none;
+
+      .main-header--input & {
+        display: none;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &::after,
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        background-color: $color-text;
+        height: 2px;
+        position: absolute;
+        transition:
+          top .2s ease-in-out .2s,
+          bottom .2s ease-in-out .2s,
+          box-shadow .2s ease-in-out .2s,
+          transform .2s ease-in-out;
+      }
+
+      &::before {
+        top: 0;
+        box-shadow: 0 8px 0 0 $color-text;
+      }
+
+      &::after {
+        top: calc(100% - 2px);
+      }
+
+      &--active {
+        &::before,
+        &::after {
+          box-shadow: none;
+          top: calc(50% - 1px);
+          transform: rotate(135deg);
+          transition:
+            top .2s ease-in-out,
+            bottom .2s ease-in-out,
+            box-shadow .2s ease-in-out,
+            transform .2s ease-in-out .2s;
+        }
+
+        &::after {
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+
+  // Top
+  &__top {
+    @include container();
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 19px 0 22px;
+
+    @include mobile {
+      background-color: $color-gray-95;
+      padding: 0 2%;
+      width: 100%;
+    }
+  }
+
+  &__info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: stretch;
+
+      & > * {
+        padding: 20px;
+      }
+    }
+  }
+
+  &__place {
+    padding-left: 18px;
+    margin-right: 15px;
+  }
+
+  &__place-title {
+    display: none;
+
+    @include mobile {
+      display: block;
+      font-size: .688em;
+      text-transform: uppercase;
+      color: $color-gray-64;
+    }
+  }
+
+  &__place-link {
+    position: relative;
+
+    border-color: $color-gray-64;
+  }
+
+  &__place-subtitle {
+    color: $color-gray-64;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__place-icon {
+    position: absolute;
+    bottom: 5px;
+    left: -20px;
+    width: 12px;
+    height: 16px;
+
+    svg {
+      height: 16px;
+      width: 16px;
+      fill: $color-text-light;
+    }
+  }
+
+  &__phone {
+    padding-left: 18px;
+
+    @include mobile {
+      border-top: 1px solid $color-gray-85;
+    }
+  }
+
+  &__phone-discuss {
+    @include mobile {
+      border-color: $color-gray-64;
+    }
+  }
+
+  &__phone-number {
+    position: relative;
+    color: $color-gray-64;
+
+    strong {
+      color: $color-text;
+    }
+
+    @include mobile {
+      span {
+        display: none;
+      }
+
+      color: $color-text;
+      font-weight: 500;
+    }
+  }
+
+  &__phone-icon {
+    position: absolute;
+    bottom: 5px;
+    left: -20px;
+    width: 16px;
+    height: 16px;
+
+    svg {
+      height: 16px;
+      width: 16px;
+      fill: $color-text-light;
+    }
+  }
+
+  &__user {
+    display: flex;
+    flex-direction: row;
+
+    @include mobile {
+      .main-header--input & {
+        display: none;
+      }
+
+      position: fixed;
+      z-index: $index-menuUser;
+      right: 2%;
+      top: $mobileMenuTop;
+    }
+  }
+
+  &__registration,
+  &__login {
+    border: none;
+
+    &:hover {
+      svg {
+        fill: $color-main;
+      }
+    }
+
+    &-icon {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 7px;
+
+      svg {
+        fill: $color-text-light;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__login {
+
+  }
+
+  &__registration {
+    margin-left: 20px;
+  }
+
+
+  // Order
+  &__container {
+    @include container();
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__order {
+    background-color: $color-gray-95;
+    position: relative;
+
+    @include mobile {
+      order: -1;
+      border-top: 1px solid $color-gray-91;
+    }
+  }
+
+  &__order-logo {
+    display: none;
+  }
+
+  &__order-item {
+    padding: 15px 20px;
+    border-right: 1px solid $color-gray-91;
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+    color: $color-text;
+    cursor: default;
+
+    @include mobile {
+      display: block;
+      border: none;
+      padding: 5px 0;
+      cursor: pointer;
+
+      @include arrow-right();
+
+      &:first-of-type {
+        margin-top: 12px;
+      }
+    }
+
+    @include desktop {
+      &:first-child {
+        border-left: 1px solid $color-gray-91;
+      }
+
+      &:hover {
+        color: $color-main;
+        border-bottom: 1px solid $color-main;
+
+        & > .inner-menu {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__order-title {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &__order-value {
+    margin-left: 10px;
+    color: $color-gray-64;
+  }
+
+  &__form {
+    flex-grow: 1;
+    position: relative;
+    margin-right: 170px;
+
+    @include mobile {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__search {
+    border: none;
+    padding: 15px 50px;
+    line-height: inherit;
+    background-color: transparent;
+    box-sizing: border-box !important;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      background-color: #fff;
+    }
+
+    @include desktop {
+      &:hover {
+        background-color: $color-gray-91;
+      }
+    }
+
+    @include mobile {
+      padding: 12px 20px;
+      width: 40px;
+      margin-left: 50px;
+      color: transparent;
+
+      &:focus {
+        background-color: #fff;
+        border-bottom: 1px solid $color-main;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin-left: 0;
+        padding-left: 10%;
+        color: $color-text;
+
+        & + .main-header__search-icon {
+          z-index: 1;
+          left: 2%;
+        }
+      }
+    }
+  }
+
+  &__search-icon {
+    position: absolute;
+    left: 20px;
+    top: calc(50% - 10px);
+
+    svg {
+      width: 16px;
+      height: 16px;
+      fill: $color-text-light;
+    }
+
+    @include mobile {
+      z-index: -2;
+      left: 60px;
+      transition: left .2s ease-out;
+    }
+  }
+
+  &__search-close {
+    opacity: 0;
+    display: none;
+
+    @include mobile {
+      display: block;
+      position: fixed;
+      right: 2%;
+      top: 10px;
+      font-size: 0;
+      width: 15px;
+      height: 15px;
+      transform: rotate(45deg);
+      background-color: transparent;
+      border: none;
+
+      &--active {
+        opacity: 1;
+        transition: all .2s ease-in-out;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        background-color: $color-text;
+        width: 100%;
+        height: 2px;
+        top: 15px;
+        left: 0;
+      }
+
+      &::after {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__submenu-list {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+  }
+
+  &__btn {
+    display: flex;
+    flex-direction: row;
+    background-color: $color-main;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f59203;
+    }
+
+    @include mobile {
+      background-color: transparent;
+      align-items: stretch;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &__btn-item {
+    background-color: transparent;
+    border: none;
+    text-transform: uppercase;
+    color: #563301;
+    font-weight: bold;
+    padding: 8px 11px;
+    text-shadow: 0 1px 0 $color-main-lighten;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include mobile {
+      border-top: 1px solid $color-gray-85;
+      border-bottom: 1px solid $color-gray-85;
+      padding: 18px 0;
+      text-shadow: none;
+      color: $color-text;
+      width: 100%;
+      text-align: left;
+      margin-top: 12px;
+
+      @include arrow-right();
+    }
+  }
+
+  &__btn-plus {
+    font-size: 0;
+    display: block;
+    width: 42px;
+    padding: 8px 11px;
+    border-left: 1px solid #dd8200;
+    background-color: transparent;
+
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 12px;
+      background-color: #563301;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+
+  // Submenu
+  &__submenu {
+    background-color: $color-gray-91;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__submenu-list {
+    background-color: $color-gray-91;
+  }
+
+  &__submenu-link,
+  &__submenu-active  {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 7px 20px;
+    text-decoration: none;
+    color: $color-text;
+  }
+
+  &__submenu-link {
+    &:hover {
+      background-color: $color-gray-85;
+    }
+
+    &:focus,
+    &:active {
+      background-color: $color-gray-64;
+    }
+  }
+
+  &__submenu-active {
+    cursor: default;
+  }
+
+  &__submenu-item {
+    border-right: 1px solid $color-gray-85;
+
+    &:first-child {
+      border-left: 1px solid $color-gray-85;
+    }
+  }
+
+  &__submenu-active {
+    background-color: $color-gray-64;
+  }
+}
+
+.user {
+  text-align: right;
+
+  @include mobile {
+    display: flex;
+    font-size: 0;
+  }
+
+  &__name,
+  &__notification {
+    display: block;
+    @include link();
+
+    &::after {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      width: 6px;
+      height: 6px;
+      border-bottom: 1px solid $color-text;
+      border-right: 1px solid $color-text;
+      margin-left: 5px;
+      margin-bottom: 6px;
+      transform: rotate(45deg);
+
+      @include mobile {
+        content: none;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      svg {
+        fill: $color-main;
+      }
+
+      &::after {
+        border-color: $color-main;
+      }
+    }
+
+    &:active {
+      svg {
+        fill: $color-main-darken;
+      }
+
+      &::after {
+        border-color: $color-main-darken;
+      }
+    }
+
+    &-icon {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 7px;
+
+      svg {
+        fill: $color-text;
+      }
+    }
+  }
+
+  &__name {
+    &-icon {
+      svg {
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
+
+  &__notification {
+    @include mobile {
+
+    }
+
+    &-icon {
+      @include mobile {
+        display: none;
+      }
+
+      svg {
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    &-value {
+      color: red;
+      font-weight: bold;
+
+      @include mobile {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+

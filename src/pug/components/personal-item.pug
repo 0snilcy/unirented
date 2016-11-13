@@ -1,0 +1,34 @@
+mixin personal-item
+  .personal-item
+    .personal-item__title
+      .personal-item__maintitle Аренда автокрана
+      .personal-item__subtitle Автокраны
+    .personal-item__place
+      .personal-item__icon
+         svg(aria-hidden="true")
+           use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#placemark")
+      .personal-item__city Санкт-Петербург
+    .personal-item__date
+      .personal-item__day 9 сентября
+      .personal-item__year 2017
+    .personal-item__status.personal-item__status--open Открыт
+
+mixin personal-item-duble
+  .personal-item
+    .personal-item__title
+      .personal-item__maintitle Доставка леса
+      .personal-item__subtitle Доставка груза
+    .personal-item__place.personal-item__place--double
+      .personal-item__city Санкт-Петербург
+      .personal-item__city Новороссийск
+    .personal-item__date
+      .personal-item__day 15 августа
+      .personal-item__year 2017
+    .personal-item__status.personal-item__status--close Завершен
+
+mixin aside-item(title, icon)
+  a.personal__aside-item.link(href="#")
+    .personal__aside-icon
+      svg(aria-hidden="true")
+        use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#" + icon)
+    =title

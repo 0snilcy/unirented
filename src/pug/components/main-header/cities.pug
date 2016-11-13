@@ -1,0 +1,68 @@
+.cities
+  button.cities__close(type="button", data-close="btn") Закрыть
+  .cities__container
+    .cities__all(data-scrollbar="true")
+      .cities__all-title Все города
+      ul.cities__list
+        li.cities__item
+          a.cities__link(href="#") Москва и МО
+        li.cities__item
+          a.cities__link(href="#") Санкт-Петербург и ЛО
+      ul.cities__list
+        - var all = ["Архангельская область","Башкортостан","Белгородская область","Брянская область","Владимирская область","Вологодская область","Воронежская область","Ивановская область","Калужская область","Кировская область","Костромская область","Краснодарский край","Курская область","Липецкая область","Кировская область","Костромская область","Краснодарский край","Курская область","Липецкая область"];
+        each item in all
+          li.cities__item
+            a.cities__link(href="#")= item
+
+    .cities__find
+      form.cities__form
+        label.cities__label
+          .cities__icon
+            svg(aria-hidden="true")
+              use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#search")
+          input.cities__input.input(type="search", placeholder="найти свой город")
+
+      .cities__wrap(data-scrollbar="true")
+        .cities__box
+          ul.cities__list(data-title="А")
+            - var allA = ["Абинск","Адлер","Азнакаево","Азов","Алексин","Альметьевск","Анапа","Апатиты","Апшеронск","Арзамас","Армавир","Архангельск"];
+            each item in allA
+              li.cities__item
+                a.cities__link(href="#")= item
+
+          ul.cities__list(data-title="К")
+            - var allK = ["Красное Село","Кронштадт","Кропоткин","Крымск","Кстово","Кукмор","Курганинск","Курск","Кущевская"];
+            each item in allK
+              li.cities__item
+                a.cities__link(href="#")= item
+
+          ul.cities__list(data-title="Л")
+            - var allL = ["Лабинск","Липецк","Лиски","Лобня","Лодейное Поле","Ломоносов","Луга","Луховицы","Люберцы"];
+            each item in allL
+              li.cities__item
+                a.cities__link(href="#")= item
+
+          ul.cities__list(data-title="С")
+            - var allS = ["Смоленск","Солнечногорск","Сортавала","Сосновый Бор","Сочи","Ставрополь","Старая Русса","Старый Оскол","Сясьстрой"];
+            each item in allS
+              li.cities__item
+                a.cities__link(href="#")= item
+
+          ul.cities__list(data-title="Т")
+            - var allT = ["Таганрог","Тамбов","Тверь","Темрюк","Тимашевск","Тихвин","Тихорецк","Тольятти","Торжок","Тосно","Троицк","Туапсе","Тула"];
+            each item in allT
+              li.cities__item
+                a.cities__link(href="#")= item
+
+          ul.cities__list(data-title="У")
+            - var allU = ["Уварово","Удомля","Ульяновск","Усть-Лабинск","Уфа"];
+            each item in allU
+              li.cities__item
+                a.cities__link(href="#")= item
+
+
+
+
+
+
+

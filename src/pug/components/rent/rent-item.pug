@@ -1,0 +1,7 @@
+mixin rent-item(title, desc, pick)
+  article.rent-item
+    .rent-item__pick
+      svg(aria-hidden="true")
+        use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#" + pick)
+    a.rent-item__title.link(href="#")= title
+    .rent-item__desc= desc

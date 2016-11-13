@@ -1,21 +1,23 @@
 @font-face {
-  font-family: 'Awesome Font';
+  font-family: 'AkzidenzGroteskPro';
   font-style: normal;
   font-weight: 400;
-  src: local('Awesome Font'),
-    url('/fonts/awesome.woff2') format('woff2'),
-    url('/fonts/awesome.woff') format('woff'),
-    url('/fonts/awesome.ttf') format('ttf'),
-    url('/fonts/awesome.eot') format('eot');
+  src: local('Akzidenz-Grotesk Pro Regular'),
+    url(../fonts/AkzidenzGroteskPro-Regular.otf);
 }
 
 @font-face {
-  font-family: 'Awesome Font';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Awesome Font Italic'),
-    url('/fonts/awesome-i.woff2') format('woff2'),
-    url('/fonts/awesome-i.woff') format('woff'),
-    url('/fonts/awesome-i.ttf') format('ttf'),
-    url('/fonts/awesome-i.eot') format('eot');
+  font-family: 'AkzidenzGroteskPro';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Akzidenz-Grotesk Pro Med'),
+    url(../fonts/AkzidenzGroteskPro-Md.otf);
+}
+
+@font-face {
+  font-family: 'AkzidenzGroteskPro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Akzidenz-Grotesk Pro Bold'),
+    url(../fonts/AkzidenzGroteskPro-Bold.otf);
 }

@@ -1,0 +1,95 @@
+@include desktop {
+  .main-header {
+    top: -20px;
+    transition: top .2s ease-in-out;
+  }
+
+  .main-header--fixed {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(242, 242, 242, .95);
+
+    .main-header__logo-fixed {
+      display: block;
+      position: absolute;
+      left: calc(50% - #{$width-desktop}/2);
+      top: 10px;
+      z-index: 1;
+    }
+
+    .main-header__logo {
+      display: none;
+    }
+
+    .main-header__info {
+      display: none;
+    }
+
+    .main-header__container {
+      padding-right: 0;
+    }
+
+    .main-header__submenu {
+      display: none;
+    }
+
+    .main-header__top {
+      padding: 0;
+    }
+
+    .main-header__order-item {
+      &:first-of-type {
+        border-left: 1px solid $color-gray-91;
+        margin-left: 140px;
+      }
+    }
+
+    .user {
+      font-size: 0;
+      position: absolute;
+      z-index: 101;
+      // 270px — размер кнопки заказать
+      left: calc(50% + #{$width-desktop} / 2 - 270px);
+      top: 15px;
+      transform: translateX(-100%);
+      display: flex;
+
+      &__name,
+      &__notification {
+        display: flex;
+        align-items: center;
+
+        &-icon {
+          margin-right: 0;
+        }
+      }
+
+      &__notification {
+        margin-left: 20px;
+
+        &-value {
+          font-size: 1rem;
+        }
+
+        &::after {
+          content: none;
+        }
+      }
+    }
+
+    .registration {
+      font-size: 0;
+      position: absolute;
+      z-index: 101;
+      // 280px — размер кнопки заказать
+      left: calc(50% + #{$width-desktop} / 2 - 280px);
+      top: 15px;
+      transform: translateX(-100%);
+      display: flex;
+
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.select {
+  .ui-button {
+    width: 100%;
+    border-radius: 0;
+    padding: 8px 10px;
+    border: 1px solid $color-gray-91;
+    background-color: transparent;
+    font-size: 1em;
+    font: $font;
+    color: $color-gray-64;
+
+    &:hover {
+      border-color: $color-gray-85;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      border-color: $color-main;
+    }
+  }
+
+  .ui-button .ui-icon {
+    display: block;
+    width: 1px;
+    height: 1px;
+    border: 6px solid transparent;
+    border-top-color: $color-text;
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 3px);
+  }
+
+  &--error {
+    .ui-button {
+      border-color: red;
+    }
+  }
+
+  .ui-corner-all, .ui-corner-bottom, .ui-corner-br, .ui-corner-right {
+    border-radius: 0 !important;
+  }
+
+  .ui-widget {
+    font-size: 1em;
+  }
+}
+
+.ui-selectmenu-open * {
+  box-sizing: border-box;
+  font: $font;
+}
+
+
+
+
+

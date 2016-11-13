@@ -1,0 +1,48 @@
+.btn {
+  border: none;
+  background-color: $color-gray-91;
+  color: $color-text;
+  padding: 13px 21px;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+
+  &:hover,
+  &:focus {
+    background-color: $color-gray-95;
+    outline: none;
+  }
+
+  &:active {
+    background-color: $color-gray-64;
+  }
+
+  &[disabled] {
+    color: $color-gray-64;
+    background-color: $color-gray-98;
+  }
+
+  &--small {
+    padding: 8px 10px;
+  }
+
+  &--color {
+    background-color: $color-main;
+
+
+    &:hover,
+    &:focus {
+      &:not([disabled]) {
+        background-color: $color-main-lighten;
+      }
+    }
+
+    &:active {
+      &:not([disabled]) {
+        background-color: $color-main-darken;
+      }
+    }
+  }
+}
+
+

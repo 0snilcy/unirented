@@ -1,0 +1,38 @@
+.questionnaire-setting__step-2
+  .questionnaire-setting__subtitle Шаг 2 из 4
+  .questionnaire-setting__title Когда нужна техника?
+
+  .tabs
+    button(type="button").tabs__hidden
+    .tabs__wrap
+      button(type="button").tabs__item.tabs__item--curent Один день
+      button(type="button").tabs__item Несколько дней
+      button(type="button").tabs__item По договоренности
+
+  .questionnaire-setting__datapicker
+
+  .questionnaire-setting__times.tabs
+    button(type="button").tabs__hidden
+    .tabs__wrap
+      button(type="button").tabs__item.tabs__item--curent Весь день
+      button(type="button").tabs__item Несколько часов
+      button(type="button").tabs__item Любое или договорное время
+
+  .questionnaire-setting__time
+    .input-helper(data-before="c")
+      input.input.input-helper__input(type="time")
+    .input-helper(data-before="до")
+      input.input.input-helper__input(type="time")
+
+  .questionnaire-setting__result
+    | Автовышка нужна
+    =" "
+    strong 28 августа 2016
+    =" "
+    | с 12:00 до 16:00
+
+  .questionnaire-setting__back Назад,&nbsp;
+    a.pseudo-link(href="#", data-step="back", data-content="Назад") к первому шагу
+    button.questionnaire-setting__btn.btn(type="button", data-step="2", data-content="Продолжить") Следующий вопрос
+
+

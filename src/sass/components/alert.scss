@@ -1,0 +1,49 @@
+.alert {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  padding-right: 45px;
+  border: 1px solid $color-gray-91;
+  box-shadow: $box-shadow;
+  padding: 14px 18px;
+
+  &--hide {
+    display: none;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  strong {
+    margin-right: 10px;
+  }
+
+  &__close {
+    @include close();
+    right: 17px;
+    top: 18px;
+  }
+
+  &--warning {
+    background-color: #fff1c8;
+    border: none;
+  }
+
+  &--danger {
+    background-color: #ffdada;
+    border: none;
+    color: red;
+  }
+
+  &--success {
+    background-color: #e3f8e1;
+  }
+}
+
+
+
+
+
+
+

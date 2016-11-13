@@ -9,5 +9,119 @@ img {
 }
 
 body {
+  font: $font;
   min-width: $width-mobile;
+  color: $color-text;
+  background-color: #fff;
+  font-style: normal;
+  font-weight: 400;
+  overflow-x: hidden;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &.menu-open {
+    overflow: hidden;
+  }
+}
+
+main.main {
+  @include desktop {
+  flex-grow: 1;
+  }
+
+  @include mobile {
+    padding-top: 50px;
+  }
+
+  &--full {
+    display: flex;
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+h5,h6 {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 1.5em;
+  padding: 0;
+  padding-bottom: 1.375em;
+}
+
+h2 {
+  font-size: 1.25em;
+  padding: 1.727em 0 0.818em;
+}
+
+h3 {
+  font-size: 1.25em;
+  padding: 1.167em 0 1em;
+}
+
+h4 {
+  font-size: 1em;
+  padding: 1.438em 0 1.188em;
+}
+
+h5 {
+  font-size: .813em;
+  padding: 2.154em 0 .923em;
+}
+
+h6 {
+  font-size: .688em;
+  padding: 1.909em 0 .455em;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+strong {
+  font-weight: 500;
+}
+
+.small {
+  font-size: 13px;
+}
+
+[disabled] {
+  color: #a1a2a3;
+}
+
+.svg-sprite {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .2);
+  z-index: 20;
+
+  display: none;
+}
+
+.mobile-btn {
+  border-bottom: 1px solid $color-gray-91;
+  padding-bottom: 17px;
+  padding-top: 16px;
+  margin-bottom: 22px;
+
+  @include desktop {
+    display: none;
+  }
 }

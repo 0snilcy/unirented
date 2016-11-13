@@ -6,12 +6,54 @@
   'utils/mixins';
 
 @import
-  'base/font',
-  'base/base';
-
-@import
   'grid/media',
   'grid/grid';
 
 @import
-  'components/main-header';
+  'vendor/jquery-ui',
+  'vendor/owl.carousel',
+  'vendor/perfect-scrollbar',
+  'vendor/ion.rangeSlider',
+  'vendor/ion.rangeSlider.skinFlat';
+
+@import
+  'base/font',
+  'base/base';
+
+@import
+  'components/gui',
+  'components/btn',
+  'components/link',
+  'components/radio',
+  'components/checkbox',
+  'components/pagination',
+  'components/tabs',
+  'components/select',
+  'components/table',
+  'components/hint',
+  'components/modal',
+  'components/progress',
+  'components/alert',
+  'components/input',
+  'components/prompt',
+  'components/btn-add',
+
+  'blocks/main-header/main-header',
+  'blocks/main-header/menu-header--fixed',
+  'blocks/main-header/inner-menu',
+  'blocks/main-header/cities',
+  'blocks/features',
+  'blocks/rent',
+  'blocks/works',
+  'blocks/fresh',
+  'blocks/reviews',
+  'blocks/posted',
+  'blocks/questionnaire/questionnaire-data',
+  'blocks/questionnaire/questionnaire-setting',
+  'blocks/questionnaire/questionnaire-complete',
+  'blocks/personal',
+
+  'blocks/main-footer';
+
+
+

@@ -1,0 +1,117 @@
+.questionnaire-complete {
+  @include desktop {
+    width: 750px;
+    margin: 65px auto 90px;
+  }
+
+  @include mobile {
+    @include container();
+
+    padding-top: 32px;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 50px;
+
+    @include mobile {
+      margin-bottom: 18px;
+    }
+  }
+
+  &__icon {
+    margin-bottom: 23px;
+
+    svg {
+      width: 72px;
+      height: 72px;
+      fill: $color-main;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 700;
+
+    @include desktop {
+      font-size: 1.5em;
+    }
+  }
+
+  &__footer {
+    margin-top: 55px;
+
+    @include mobile {
+      margin-top: 23px;
+      padding-bottom: 40px;
+    }
+
+    &-title {
+      font-weight: 700;
+      margin-bottom: 17px;
+
+      @include desktop {
+        text-align: center;
+      }
+    }
+
+    &-items {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    &-item {
+      @include mobile {
+        margin: 9px 0;
+      }
+    }
+  }
+
+  &__main {
+    background-color: $color-gray-95;
+    padding: 40px 48px;
+    position: relative;
+
+    &-title {
+      margin-bottom: 5px;
+
+      strong {
+        font-size: 1.125em;
+        color: $color-text;
+      }
+
+      color: $color-gray-64;
+    }
+
+    &-subtitle {
+      margin-bottom: 18px;
+    }
+  }
+
+  &__message {
+    font-style: italic;
+  }
+
+  &__answer {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #dc2b2c;
+    color: #fff;
+    padding: 4px 13px;
+    border-radius: 1em;
+    font-size: 1.125em;
+    margin-bottom: 1em;
+
+    @include desktop {
+      position: absolute;
+      right: -1em;
+      top: -1em;
+    }
+  }
+}

@@ -1,0 +1,252 @@
+.personal {
+  @include container();
+  padding-top: 56px;
+  padding-bottom: 100px;
+
+  @include mobile {
+    padding-top: 27px;
+    padding-bottom: 64px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    padding-bottom: 0;
+
+    @include desktop {
+      font-size: 1.5em;
+    }
+  }
+
+  &__wrap {
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  &__content {
+    @include desktop {
+      width: calc(100% / 12 * 8);
+    }
+  }
+
+  &__aside {
+    width: calc(100% / 12 * 3);
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__list {
+    margin-top: 26px;
+    margin-bottom: 24px;
+    background-color: $color-gray-98;
+
+    @include mobile {
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__aside {
+    background-color: $color-gray-95;
+    padding: 25px;
+
+    &-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border: none;
+      padding: 6px 0;
+
+      &:hover {
+        svg {
+          fill: $color-main;
+        }
+      }
+    }
+
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+        fill: $color-text;
+      }
+    }
+  }
+
+  &__more {
+    display: none;
+
+    @include mobile {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  @include mobile {
+    .pagination {
+      display: none;
+    }
+  }
+}
+
+.personal-item {
+  border-bottom: 1px solid $color-gray-91;
+
+  display: flex;
+  flex-direction: row;
+
+  @include mobile {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 7px 2% 12px;
+  }
+
+  &:first-child {
+    border-top: 1px solid $color-gray-91;
+  }
+
+  &__title {
+    @include desktop {
+      flex-basis: calc(100% / 8 * 3);
+      padding: 8px 20px;
+    }
+
+    @include mobile {
+      flex-basis: 100%;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__subtitle,
+  &__year {
+    font-size: .813em;
+    color: $color-gray-64;
+  }
+
+  &__place {
+    align-self: center;
+    display: flex;
+
+    @include desktop {
+      flex-basis: calc(100% / 8 * 2);
+      padding: 8px 0;
+    }
+
+    @include mobile {
+      flex-basis: 65%;
+      flex-grow: 1;
+    }
+
+    &--double {
+      flex-direction: column;
+      padding-left: 20px;
+
+      & > * {
+        $itemSize: 8px;
+        $itemGutterLeft: 16px;
+        position: relative;
+
+        &::before {
+          content: '';
+          display: block;
+          width: $itemSize;
+          height: $itemSize;
+          border-radius: 50%;
+          border: $itemSize/4 solid $color-text;
+
+          position: absolute;
+          left: -$itemGutterLeft;
+          top: calc(#{$line-height} * .5rem  - #{$itemSize}/2);
+        }
+
+        &:not(:last-child) {
+          &::after {
+            content: '';
+            display: block;
+            height: calc(100% - #{$itemSize});
+            background-color: $color-text;
+            width: $itemSize/4;
+            position: absolute;
+            left: calc(-#{$itemGutterLeft} + (#{$itemSize}/2 - #{$itemSize}/8));
+            top: calc(#{$line-height} * .5rem  + #{$itemSize}/2);
+          }
+        }
+      }
+    }
+  }
+
+  &__icon {
+    flex-basis: 20px;
+
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 16px;
+      height: 16px;
+
+      fill: $color-text;
+    }
+  }
+
+  &__date {
+    @include desktop {
+      flex-basis: calc(100% / 8 * 2);
+      padding: 8px 0;
+    }
+
+    @include mobile {
+      display: flex;
+      order: 100;
+      flex-basis: 50%;
+    }
+  }
+
+  &__day {
+    @include mobile {
+      font-size: .813em;
+      color: $color-gray-64;
+      margin-right: 5px;
+    }
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include desktop {
+      flex-basis: calc(100% / 8 * 1);
+    }
+
+    @include mobile {
+      flex-basis: auto;
+      padding: 0 5px;
+    }
+
+
+    &--open {
+      background-color: #5fb120;
+      color: #fff;
+    }
+
+    &--close {
+      background-color: #d3d3d3;
+      color: $color-gray-64;
+    }
+  }
+}
+

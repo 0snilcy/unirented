@@ -1,0 +1,59 @@
+.checkbox {
+  display: inline-block;
+  vertical-align: middle;
+
+  &__label {
+    cursor: pointer;
+    position: relative;
+    padding-left: 30px;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: calc(50% - .5em);
+      left: 0;
+      width: 18px;
+      height: 18px;
+      background-color: #fff;
+      border: 1px solid $color-gray-91;
+    }
+
+    &:focus,
+    &:hover {
+      &::before {
+        border-color: $color-gray-64;
+      }
+    }
+
+    &:active {
+      &::before {
+        background-color: $color-gray-98;
+      }
+    }
+
+    &::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: calc(50% - .5em + 3px);
+      left: 3px;
+      width: 12px;
+      height: 11px;
+      opacity: 0;
+      background: transparent url('../img/check-mark.png') center no-repeat;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  input:checked + label::after {
+    opacity: 1;
+  }
+
+  input[disabled] + label::after {
+    opacity: .4;
+  }
+}

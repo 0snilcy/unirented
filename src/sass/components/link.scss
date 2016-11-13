@@ -1,0 +1,29 @@
+.link {
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  color: $color-text;
+  border-bottom: 1px solid currentColor;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-main;
+  }
+}
+
+.pseudo-link {
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  color: $color-text;
+  border-bottom: 2px dotted currentColor;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-main;
+  }
+}
+
+

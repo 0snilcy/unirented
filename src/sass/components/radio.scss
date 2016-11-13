@@ -1,0 +1,47 @@
+.radio {
+  display: inline-block;
+  vertical-align: middle;
+
+  &__label {
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+      margin-bottom: 4px;
+      width: 16px;
+      height: 16px;
+      background-color: #fff;
+      border: 5px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px $color-gray-91;
+    }
+
+    &:focus,
+    &:hover {
+      &::before {
+        box-shadow: 0 0 0 1px $color-gray-64;
+      }
+    }
+
+    &:active {
+      &::before {
+        border-color: $color-gray-98;
+      }
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  input:checked + label::before {
+    background-color: $color-text;
+  }
+
+  input[disabled] + label::before {
+    background-color: $color-gray-64;
+  }
+}

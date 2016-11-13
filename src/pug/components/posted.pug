@@ -1,0 +1,14 @@
+.posted(data-post="wrap")
+  .posted__box
+    form.posted__form
+      .posted__title Укажите свой телефон чтобы продолжить
+      .posted__wrap
+        input.posted__input(type="text", placeholder="+7(___)___-__-__", data-input="phone")
+        button.posted__btn.btn.btn--small.btn--color(type="submit") Продолжить
+    .posted__login
+      .posted__login-title Вы зарегистрированы?
+      a.posted__login-link.link(href="#")
+        svg(aria-hidden="true")
+          use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#entry")
+        | Вам нужно войти
+

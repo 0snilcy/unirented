@@ -1,0 +1,146 @@
+.fresh {
+  @include container();
+  padding-bottom: 50px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+
+  .prompt {
+    @include mobile {
+      order: 100;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 58px;
+
+    @include desktop {
+      font-size: 1.5em;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $color-text;
+
+      @include desktop {
+        border-bottom: 1px solid $color-main;
+      }
+
+      &:hover {
+        border: none;
+      }
+    }
+  }
+
+  &__subtitle {
+    flex-grow: 1;
+
+    @include desktop {
+      font-size: 1.5em;
+      text-transform: uppercase;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  &__main {
+    @include desktop {
+      @include row();
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 100%;
+
+    &-title {
+      flex-basis: 50%;
+      padding-right: 110px;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &-btn {
+      margin-right: auto;
+
+      @include mobile {
+        margin-left: auto;
+        margin-bottom: 11px;
+      }
+
+      @include desktop {
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+.fresh-item {
+  padding: 7px 10px 50px;
+  position: relative;
+
+  @include desktop {
+    width: calc(100% / 6 - 10px);
+  }
+
+  @include mobile {
+    width: 184px;
+  }
+
+  background: $color-gray-98 url('../img/fresh-item-bg.png') left bottom repeat-x;
+
+  &:hover {
+    background-color: $color-gray-95;
+  }
+
+  &__subtitle {
+    font-size: .688em;
+    color: $color-gray-64;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    border: none;
+    margin-bottom: 7px;
+  }
+
+  &__info {
+    font-size: .813em;
+    color: $color-gray-64;
+    margin-bottom: 5px;
+  }
+
+  &__mark {
+    font-size: .688em;
+    text-transform: uppercase;
+    background-color: $color-gray-64;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 5px;
+    color: #fff;
+
+    &--main {
+      background-color: $color-main;
+      color: $color-text;
+    }
+  }
+}
+

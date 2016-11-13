@@ -1,0 +1,52 @@
+extends pug/layout/base
+include pug/components/personal-item
+
+block title
+  title Личный кабинет
+
+block content
+  .personal
+    h1.personal__title Мои заказы
+    .personal__wrap
+      section.personal__content
+        .tabs
+          button(type="button").tabs__hidden
+          .tabs__wrap
+            button(type="button").tabs__item.tabs__item--curent Активные
+              span 54
+            button(type="button").tabs__item На проверке
+              span 6
+            button(type="button").tabs__item Завершенные
+              span 12
+
+        .personal__list
+          - for (var i = 0; i < 8; i++)
+            +personal-item()
+            +personal-item-duble()
+
+
+        .personal__more.btn(type="button") Ещё
+
+        .pagination
+          .pagination__wrap
+            a(href="#").pagination__swift ← Назад
+            a(href="#").pagination__swift Дальше →
+          .pagination__list
+            a(href= "#").pagination__item 1
+            span.pagination__more
+              a(href="#").pagination__item 10
+              a(href="#").pagination__item.pagination__item--curent 11
+              a(href="#").pagination__item 12
+              a(href="#").pagination__item 13
+              a(href="#").pagination__item 14
+            a(href="#").pagination__item 230
+
+      aside.personal__aside
+        .personal__aside-list
+          +aside-item("Мои заказы", "mess")
+          +aside-item("Мои ставки", "mess")
+          +aside-item("Профиль", "mess")
+          +aside-item("Сообщения", "mess")
+          +aside-item("Моя техника", "mess")
+          +aside-item("Точки базирования", "placemark")
+

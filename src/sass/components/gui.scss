@@ -1,0 +1,37 @@
+.gui {
+  padding: 100px 0;
+
+  h1,h2,h3,h4,h5,h6 {
+    outline: 1px solid #7ce5ff;
+    background:
+      repeating-linear-gradient(
+        -45deg,
+        transparent, transparent 5px,
+        #7ce5ff 5px, #7ce5ff 6px
+    );
+  }
+
+  .row > * > * {
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    margin-right: 10px;
+  }
+
+  a {
+    margin-right: 10px;
+  }
+
+  .pagination__item {
+    margin-right: 0;
+  }
+
+  .input-helper--range {
+    margin-bottom: 25px;
+  }
+}
+
+
+
+

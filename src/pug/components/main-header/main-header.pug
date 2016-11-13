@@ -1,0 +1,80 @@
+header.main-header
+  section.main-header__mobile
+    button.main-header__menu-btn Открыть
+  .main-header__wrap
+
+
+    section.main-header__top
+      a.main-header__logo-link(href="/")
+        img.main-header__logo(src="img/logo.png")
+        img.main-header__logo-fixed(src="img/logo-fixed.png")
+      .main-header__info
+        .main-header__place
+          .main-header__place-title Ваш регион
+          a.pseudo-link.main-header__place-link(href="#") Комсомольск-на-Амуре
+            .main-header__place-icon
+              svg(aria-hidden="true")
+                use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#placemark")
+          .main-header__place-subtitle Более 3 000 единиц техники в регионе
+        .main-header__phone
+          .main-header__phone-number +7
+            strong  (495) 118-96-72
+            span  работаем 24/7
+            .main-header__phone-icon
+              svg(aria-hidden="true")
+                use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#phone")
+          a.pseudo-link.main-header__phone-discuss(href="#") Обсудить задачу со специалистом
+      .main-header__user
+
+        //- Авторизованный пользователь
+        include authorized
+
+        //- Новый пользователь
+        //- include registration
+
+    section.main-header__order
+      .main-header__container
+        .main-header__order-item
+          span.main-header__order-title Услуги
+          span.main-header__order-value 92
+
+          //- Выпадающее меню
+          include inner-menu
+
+        .main-header__order-item
+          span.main-header__order-title Техника
+          span.main-header__order-value 51
+
+          //- Выпадающее меню
+          include inner-menu
+
+        form.main-header__form
+          input.main-header__search(type="search", placeholder="например, Caterpillar")
+          .main-header__search-icon
+            svg(aria-hidden="true")
+              use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#search")
+          button.main-header__search-close(type="button") Закрыть
+        .main-header__btn
+          button.main-header__btn-item(type="button") Размеситить заказ
+          span.main-header__btn-plus +
+
+    section.main-header__submenu
+      .main-header__container
+        ul.main-header__submenu-list
+          - var submenu = [{title: "Главная"},{title: "Тезника"},{title: "Грузовые автомобили"},{title: "Длинометры", active: true}];
+          each value, key in submenu
+            li.main-header__submenu-item
+              if value.active
+                span.main-header__submenu-active= value.title
+              else
+                a.main-header__submenu-link(href="#")= value.title
+
+  include cities
+
+
+
+
+
+
+
+

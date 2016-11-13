@@ -1,0 +1,65 @@
+.modal {
+  border: 1px solid $color-gray-91;
+  background-color: #fff;
+  box-shadow: $box-shadow;
+  padding: 22px;
+  vertical-align: middle;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+    background-color: #fff;
+    bottom: -8px;
+    left: calc(50% - 10px);
+    border-bottom: 1px solid $color-gray-91;
+    border-right: 1px solid $color-gray-91;
+  }
+
+  &__desc {
+    padding-right: 40px;
+  }
+
+  p:first-child {
+    margin-top: 25px;
+  }
+
+  &--hide {
+    display: none;
+  }
+
+  &__close {
+    @include close();
+      right: 20px;
+      top: 20px;
+  }
+
+  &__btns {
+    margin-top: 43px;
+  }
+
+  &--gray {
+    background-color: $color-gray-98;
+
+    &::after {
+      background-color: $color-gray-98;
+    }
+
+    .modal__close {
+      right: 10px;
+      top: 10px;
+    }
+
+    .modal__btns {
+      margin-top: 19px;
+    }
+  }
+}
+
+
+
+

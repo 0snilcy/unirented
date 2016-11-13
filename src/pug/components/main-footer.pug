@@ -1,0 +1,29 @@
+footer.main-footer
+  .main-footer__container
+    .main-footer__copy &copy; 2016 ООО «Юнитрейнер»
+    .main-footer__nav
+      ul.main-footer__list
+        - var footerNav = ["О сервисе", "Техника", "Услуги", "Разместить заказ", "Помощь", "Контакты"];
+          each item in footerNav
+            li.main-footer__item
+              a.main-footer__link.link(href="#")= item
+    .main-footer__social
+      .main-footer__social-title Мы в социальных сетях
+      .main-footer__social-items
+        a.main-footer__social-item(href="#") Вконтакте
+          svg(aria-hidden="true")
+            use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#vk")
+        a.main-footer__social-item(href="#") Твиттер
+          svg(aria-hidden="true")
+            use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#twitter")
+        a.main-footer__social-item(href="#") Фейсбук
+          svg(aria-hidden="true")
+            use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#facebook")
+  .main-footer__app
+    .main-footer__app-title Скачайте мобильное<br>приложение Unirenter
+    a.main-footer__app-item(href="#", title="Google Play") Google Play
+      img(src="img/app-google.png")
+    a.main-footer__app-item(href="#", title="App Store") App Store
+      img(src="img/app-apple.png")
+
+

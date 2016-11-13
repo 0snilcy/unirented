@@ -1,0 +1,26 @@
+mixin reviews-item(title, subtitle, desc, stars)
+  blockquote.reviews-item
+    .reviews-item__stars.reviews-item__stars--4
+      .reviews-item__icon
+        svg(aria-hidden="true")
+          use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#star")
+      .reviews-item__icon
+        svg(aria-hidden="true")
+          use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#star")
+      .reviews-item__icon
+        svg(aria-hidden="true")
+          use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#star")
+      .reviews-item__icon
+        svg(aria-hidden="true")
+          use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#star")
+      .reviews-item__icon
+        svg(aria-hidden="true")
+          use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#star")
+    .reviews-item__main
+      p.
+        Родился на улице Герцена, в гастрономе № 22. Известный экономист, по призванию своему — библиотекарь. В народе — колхозник. В магазине — продавец.
+      p.
+        В экономике, так сказать, необходим. Это, так сказать, система… эээ… в составе 120 единиц. Фотографируете Мурманский полуостров и получаете te-le-fun-ken. И бухгалтер работает по другой линии — по линии библиотекаря
+    footer.reviews-item__footer
+      cite.reviews-item__cite= title
+      .reviews-item__position= subtitle

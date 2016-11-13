@@ -1,0 +1,51 @@
+.inner-menu
+  button.inner-menu__back(type="button") Назад
+  .inner-menu__container
+
+    .inner-menu__title
+      .inner-menu__title-text Аренда техники в&nbsp;
+        strong Москве
+      .inner-menu__title-icon
+        svg(aria-hidden="true")
+          use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#2")
+
+    .inner-menu__top
+      .inner-menu__wrap
+        .inner-menu__subtitle Популярное
+        ul.inner-menu__list.inner-menu__list--popular
+          - var popular = ["Автогрейдеры", "Автокраны", "Бетононасосы", "Грузовые автомобили", "Погрузчики"]
+          each item in popular
+            li.inner-menu__list-item
+              a.inner-menu__list-link(href="#")= item
+
+      .inner-menu__wrap
+        .inner-menu__subtitle недавно заказали
+        ul.inner-menu__list
+          - var recently = ["Автокраны", "Тралы", "Тракторы", "Самосвалы"]
+          each item in recently
+            li.inner-menu__list-item
+              a.inner-menu__list-link(href="#")= item
+
+    .inner-menu__alphabet
+      .inner-menu__wrap
+        .inner-menu__subtitle По алфавиту
+        ul.inner-menu__list.inner-menu__list--half
+          - var alphabet = ["Автовышки","Автогрейдеры","Автокраны","Бетононасосы","Бульдозеры","Грузовики","Дорожная техника","Землеройная техника","Катки","Карьерная техника","Коммунальная техника","Манипуляторы","Погрузчики","Подъёмники","Самосвалы","Складская техника","Тракторы","Тралы","Тягачи","Эвакуаторы-погрузчики","Ямобуры"]
+          each item in alphabet
+            li.inner-menu__list-item
+              a.inner-menu__list-link(href="#")= item
+
+    .inner-menu__recently
+      .inner-menu__wrap
+        .inner-menu__subtitle Недавно заказывали
+        .recently
+          include recently__item
+          +recently__item("DAF XF", "Технопарк Загорье", "recently__pick-1.jpg")
+          +recently__item("Четра Т-25", "Сосновая аллея, 7", "recently__pick-2.jpg")
+          +recently__item("Б10М", "ТЦ Калач, Сколковское шоссе", "recently__pick-3.jpg")
+          +recently__item("Четра Т-1101", "Электролитный проезд, 12Б", "recently__pick-4.jpg")
+          +recently__item("D6 Cat", "Зелёный проспект, 6 к1", "recently__pick-5.jpg")
+
+
+
+

@@ -1,0 +1,84 @@
+.pagination {
+
+  &__swift {
+    text-decoration: none;
+    color: $color-text;
+
+    &:focus,
+    &:hover {
+      color: $color-main;
+    }
+
+    &:active {
+      color: $color-main-darken;
+    }
+
+
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__more {
+    display: flex;
+    align-items: flex-end;
+
+    &::after,
+    &::before {
+      content: '...';
+      padding: 0 7px;
+    }
+
+    &:first-child {
+      &::before {
+        content: none;
+      }
+    }
+
+    &:last-child {
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  &__wrap {
+    margin-bottom: 13px;
+
+    @include mobile {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    padding: 13px 10px;
+    min-width: 48px;
+    text-decoration: none;
+    color: $color-text;
+
+    &:focus,
+    &:hover {
+      background-color: $color-main;
+    }
+
+    &:active {
+      background-color: $color-main-darken;
+    }
+
+    &--curent {
+      background-color: $color-gray-98;
+
+      &:hover {
+        background-color: $color-gray-98;
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+.input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid $color-gray-91;
+  color: #000;
+
+  &:not([disabled]) {
+    &:hover {
+      border-color: $color-gray-64;
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+      border-color: $color-main;
+    }
+  }
+
+  &:invalid,
+  &--error {
+    border-color: $color-error;
+  }
+
+  [disabled] {
+    background-color: $color-gray-98;
+  }
+}
+
+@mixin placeholder($color: #000) {
+  ::-webkit-input-placeholder {color:$color; opacity: 1; font-weight: normal;}
+  ::-moz-placeholder          {color:$color; opacity: 1; font-weight: normal;}
+  :-moz-placeholder           {color:$color; opacity: 1; font-weight: normal;}
+  :-ms-input-placeholder      {color:$color; opacity: 1; font-weight: normal;}
+}
+
+@include placeholder($color-gray-64);
+
+.input-helper {
+  position: relative;
+
+  &__input {
+    padding-left: 34px;
+    padding-right: 24px;
+  }
+
+  &::before {
+    content: attr(data-before);
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-gray-64;
+  }
+
+  &::after {
+    content: attr(data-after);
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-gray-64;
+  }
+
+  &--range {
+    margin-bottom: 25px;
+  }
+}
+
+

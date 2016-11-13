@@ -1,0 +1,12 @@
+mixin fresh-item(subtitle, title, info, mark, active)
+  article.fresh-item
+    .fresh-item__subtitle Экономия&nbsp;
+      =subtitle
+    a.fresh-item__title.link(href="#")!= title
+    .fresh-item__info= info
+    if active
+      .fresh-item__mark.fresh-item__mark--main= mark
+    else
+      .fresh-item__mark= mark
+
+

@@ -1,0 +1,119 @@
+.main-footer {
+  background-color: $color-gray-95;
+  padding-top: 32px;
+  padding-bottom: 36px;
+
+  @include mobile {
+    padding-top: 27px;
+    padding-bottom: 27px;
+  }
+
+  &__container,
+  &__app {
+    @include container();
+  }
+
+  &__copy {
+    color: $color-gray-64;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include mobile {
+      justify-content: center;
+    }
+  }
+
+  &__app {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 13px;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__app-item {
+    font-size: 0;
+
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+
+  &__app-title {
+    font-size: .813em;
+    color: $color-gray-64;
+    margin-right: 20px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 28px;
+    }
+  }
+
+  &__link {
+    border: none;
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__social-title {
+    color: $color-gray-64;
+    margin-right: 20px;
+  }
+
+  &__social-item {
+    display: inline-block;
+    font-size: 0;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    svg {
+      max-width: 16px;
+      max-height: 16px;
+      fill: #343432;
+    }
+
+    &:hover {
+      svg {
+        fill: $color-main;
+      }
+    }
+  }
+}
+
+
+
+

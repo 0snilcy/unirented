@@ -1,0 +1,59 @@
+include fresh-item
+
+section.fresh
+  .fresh__title Свежие&nbsp;
+    a.fresh__title-link(href="#") заказы
+  .fresh__subtitle &nbsp;— Экономия&nbsp;
+    strong 72%
+  .prompt.prompt--question Узнайте,&nbsp;
+    a.pseudo-link(href="#") как мы работаем?
+  .fresh__main(data-slider="mobile", data-slider-autoWidth="true", data-slider-nav="false")
+   +fresh-item(
+    "80%",
+    "Нужен бетононасос, стрела 36 м",
+    "Вчера, Москва",
+    "Техника",
+    "active"
+   )
+   +fresh-item(
+    "31%",
+    "Ищу пассажирский автобус, 88 мест",
+    "23 часа назад, Красноярск",
+    "Услуги"
+   )
+   +fresh-item(
+    "92%",
+    "Экскаватор с ковшом не менее 1м<sup>3</sup>",
+    "1 час назад, Санкт-Петербург",
+    "Техника",
+    "active"
+   )
+   +fresh-item(
+    "18%",
+    "Грузовичок на сутки, с водителем",
+    "23 минуты назад, Дно",
+    "Техника",
+    "active"
+   )
+   +fresh-item(
+    "7%",
+    "Звезда смерти, напрокат",
+    "18 минут назад, Салехард",
+    "Услуги"
+   )
+   +fresh-item(
+    "91%",
+    "Контейнеровоз и погрузчик",
+    "меньше минуты назад, Москва",
+    "Техника",
+    "active"
+   )
+  footer.fresh__footer
+    .fresh__footer-title.prompt.prompt--statement
+      strong Подсказка.
+      |  Показаны наиболее свежие заказы
+    a.fresh__footer-btn.btn(href="#") Показать все заказы
+
+
+
+

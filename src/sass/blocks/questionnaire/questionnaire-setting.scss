@@ -1,0 +1,250 @@
+.questionnaire-setting {
+  padding: 27px 0 27px 53px;
+  display: flex;
+
+  &__form {
+    display: flex;
+    width: 100%;
+  }
+
+  &__subtitle {
+    color: $color-gray-64;
+    margin-bottom: 6px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-bottom: 12px;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 5px;
+
+    span {
+      color: $color-gray-64;
+    }
+  }
+
+  &__input {
+    max-width: 240px;
+    margin-bottom: 21px;
+
+    &:last-of-type {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__btn {
+    display: block;
+    margin-top: auto;
+    align-self: baseline;
+
+    @include mobile {
+      font-size: 0;
+
+      &::before {
+        content: attr(data-content);
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &__datapicker {
+    margin-bottom: 28px;
+  }
+
+  &__time {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    & > * {
+      width: 120px;
+
+      @include mobile {
+        width: 50%;
+      }
+
+      &::after {
+        content: none;
+      }
+
+      input {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  &__times {
+    margin-bottom: 10px;
+  }
+
+  &__result {
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  &__back {
+    color: $color-gray-64;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin-top: auto;
+
+    @include mobile {
+      font-size: 0;
+
+      a {
+        &::before {
+          content: attr(data-content);
+          font-size: 1rem;
+        }
+      }
+
+      button {
+        margin-right: auto;
+      }
+
+    }
+
+    button {
+      order: -1;
+      margin-right: 20px;
+      margin-top: 0;
+    }
+  }
+
+  &__place {
+    margin-bottom: 24px;
+  }
+
+  &__map {
+    @include mobile {
+      height: 60vh ;
+      margin-left: -2%;
+      width: 104%;
+    }
+
+    @include desktop {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      top: 160px;
+    }
+  }
+
+  &__wrap {
+    @include desktop {
+      position: absolute;
+      z-index: 5;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 27px 53px;
+      background-color: rgba(255, 255, 255, .9);
+    }
+
+    @include mobile {
+      margin-top: 16px;
+    }
+  }
+
+  .input-helper > .irs {
+    margin: 0 -1.4%;
+    max-width: 102.8%;
+  }
+
+  &__specific-item {
+    margin-bottom: 13px;
+  }
+
+  &__specific-title {
+    margin-bottom: 5px;
+  }
+
+  &__text {
+    margin-top: 48px;
+    border-top: 1px solid $color-gray-91;
+    padding-top: 40px;
+    margin-bottom: 64px;
+
+    @include mobile {
+      margin-top: 24px;
+      margin-bottom: 24px;
+      padding-top: 24px;
+    }
+
+    &-title {
+      margin-bottom: 5px;
+
+      span {
+        color: $color-gray-64;
+      }
+    }
+
+    &-input {
+      width: 100%;
+      height: 56px;
+      border: 1px solid $color-gray-91;
+      resize: vertical;
+      padding: .5em;
+
+      @include mobile {
+        height: 78px;
+      }
+
+      &:not([disabled]) {
+        &:hover {
+          border-color: $color-gray-64;
+        }
+
+        &:focus,
+        &:active {
+          outline: none;
+          border-color: $color-main;
+        }
+      }
+
+      &:invalid,
+      &--error {
+        border-color: $color-error;
+      }
+
+      [disabled] {
+        background-color: $color-gray-98;
+      }
+    }
+  }
+}
+
+[class^=questionnaire-setting__step] {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  // align-items: flex-start;
+}
+
+.questionnaire-setting__step-1 {
+  // display: none;
+}
+
+.questionnaire-setting__step-2 {
+  display: none;
+}
+
+.questionnaire-setting__step-3 {
+  display: none;
+}
+
+
+.questionnaire-setting__step-4 {
+  display: none;
+}
+

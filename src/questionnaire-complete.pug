@@ -1,0 +1,38 @@
+extends pug/layout/base.pug
+
+block title
+  title Заказ успешно создан
+
+block content
+  section.questionnaire-complete
+    header.questionnaire-complete__header
+      .questionnaire-complete__icon
+        svg(aria-hidden="true")
+          use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#11")
+      .questionnaire-complete__title
+        | Отлично!
+        br/ Заказ на аренду автовышки успешно создан
+
+    .questionnaire-complete__main
+      .questionnaire-complete__answer 5 ответов
+      .questionnaire-complete__main-title
+        strong Длинномер
+        =" "
+        | 28 августа, с 12:00 до 16:00
+      .questionnaire-complete__main-subtitle
+        | Борт от 5м, грузоподъёмность от 4т, механизированая погрузка, без тента, с боковыми стойками.
+      .questionnaire-complete__message
+        | Требуется перевозка разноформатных пиломатериалов в пределах города.  Склад недалеко от кольца, хороший подъезд. Грузчики не справятся с погрузкой, нужен автопогрузчик.
+        br/ Оплата на месте по факту выполнения работ. Прошу указывать ваши цены.
+
+
+    footer.questionnaire-complete__footer
+      .questionnaire-complete__footer-title Что дальше?
+      .questionnaire-complete__footer-items
+        a.questionnaire-complete__footer-item.pseudo-link(href="#") Разместить следующий заказ
+        a.questionnaire-complete__footer-item.pseudo-link(href="#") Ответить на дополнительные вопросы
+        a.questionnaire-complete__footer-item.pseudo-link(href="#") Перейти к вашему заказу
+
+
+
+

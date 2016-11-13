@@ -1,0 +1,66 @@
+.questionnaire-setting__step-4
+  .questionnaire-setting__subtitle Шаг 4 из 4
+  .questionnaire-setting__title Технические характеристики
+
+  .questionnaire-setting__specific-item
+    .questionnaire-setting__specific-title Длина борта
+    .input-helper.input-helper--range(data-before="от", data-after="м")
+      input.input.input-helper__input(type="number")
+      .range(
+        data-type="single"
+        data-min="0",
+          data-hide-min-max="true",
+          data-max="20",
+          data-from="10")
+
+  .questionnaire-setting__specific-item
+    .questionnaire-setting__specific-title Грузоподъемность борта
+    .input-helper.input-helper--range(data-before="от", data-after="т")
+      input.input.input-helper__input(type="number")
+      .range(
+        data-type="single"
+        data-min="0",
+          data-hide-min-max="true",
+          data-max="20",
+          data-from="10")
+
+  .questionnaire-setting__specific-item
+    .questionnaire-setting__specific-title Способ погрузки
+    .tabs
+      button(type="button").tabs__hidden
+      .tabs__wrap
+        button(type="button").tabs__item.tabs__item--curent Ручной
+        button(type="button").tabs__item Механизированный
+
+  .questionnaire-setting__specific-item
+    .questionnaire-setting__specific-title Наличие тента
+    .tabs
+      button(type="button").tabs__hidden
+      .tabs__wrap
+        button(type="button").tabs__item.tabs__item--curent Да
+        button(type="button").tabs__item Нет
+        button(type="button").tabs__item Не имеет значения
+
+  .questionnaire-setting__specific-item
+    .questionnaire-setting__specific-title Боковые стойки (вокруг борта)
+    .tabs
+      button(type="button").tabs__hidden
+      .tabs__wrap
+        button(type="button").tabs__item.tabs__item--curent Да
+        button(type="button").tabs__item Нет
+        button(type="button").tabs__item Не имеет значения
+
+  .questionnaire-setting__text
+    .questionnaire-setting__text-title Комментарий для исполнителя
+      =" "
+      span — если считаете необходимым
+      textarea.questionnaire-setting__text-input
+
+
+  .questionnaire-setting__back Назад,&nbsp;
+    a.pseudo-link(href="#", data-step="back", data-content="Назад") к третьему шагу
+    button.questionnaire-setting__btn.btn(type="button", data-step="publish", data-content="Завершить") Разместить заказ
+
+
+
+

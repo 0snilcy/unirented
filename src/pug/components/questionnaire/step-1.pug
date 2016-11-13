@@ -1,0 +1,29 @@
+.questionnaire-setting__step-1
+  .questionnaire-setting__subtitle Шаг 1 из 4
+  .questionnaire-setting__title Контактная информация
+
+  label.questionnaire-setting__label(for="questionnaire-phone") Номер телефона
+  input.questionnaire-setting__input.input(
+    id="questionnaire-phone",
+    type="phone",
+    placeholder="+7(___)___-__-__",
+    data-input="phone"
+  )
+
+  label.questionnaire-setting__label(for="questionnaire-mail") Электронная почта
+    =' '
+    span — не обязательно
+  input.questionnaire-setting__input.input(id="questionnaire-mail", type="email")
+
+  label.questionnaire-setting__label(for="questionnaire-name") Как к вам обращаться?
+    =' '
+    span — не обязательно
+  input.questionnaire-setting__input.input(id="questionnaire-name", type="email")
+  button.questionnaire-setting__btn.btn(type="button", data-step="1", data-content="Продолжить") К выбору времени
+
+
+
+
+
+
+

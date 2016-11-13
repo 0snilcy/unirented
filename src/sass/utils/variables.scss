@@ -1,5 +1,39 @@
+// Цвета
+
+$color-main: #ff9a0d;
+$color-main-darken: #e48100;
+$color-main-lighten: #ffba00;
+
+$color-error: #ff0000;
+$color-text: #1d1d1d;
+$color-text-light: #2b3032;
+
+$color-gray-11: hsl(0, 0, 11);
+$color-gray-20: hsl(197, 14, 20);
+$color-gray-64: hsl(210, 1, 64);
+$color-gray-85: hsl(210, 1, 85);
+$color-gray-91: hsl(210, 1, 91);
+$color-gray-95: hsl(210, 1, 95);
+$color-gray-98: hsl(210, 1, 98);
+
+
+$box-shadow: 0 5px 15px rgba(0, 0, 0, .05);
+
+
+// Сетка
+
 $grid-gutter-width: 30px;
 $grid-columns: 12;
 
 $width-mobile: 320px;
 $width-desktop: 1170px;
+
+
+
+// Типографика
+$font-size: 16px;
+$line-height-base: 22px;
+$line-height: $line-height-base/$font-size;
+$font-family: 'AkzidenzGroteskPro';
+
+$font: #{$font-size}/#{$line-height} $font-family, Helvetica, Tahoma, sans-serif;

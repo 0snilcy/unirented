@@ -1,0 +1,54 @@
+.progress {
+  background-color: $color-gray-95;
+  height: 1.5em;
+  line-height: 1.5em;
+
+  &__bar {
+    background: linear-gradient(to bottom, #f49003, #ffa200);
+    height: 100%;
+
+    &::before {
+      content: attr(data-value);
+      font-size: .688em;
+      margin-left: 10px;
+    }
+  }
+
+  &--small {
+    height: 1em;
+    line-height: 1em;
+
+    .progress__bar {
+
+    }
+  }
+
+  &--complete {
+    text-align: center;
+
+    .progress__bar::before {
+      content: attr(data-complete);
+      width: 100%;
+    }
+  }
+
+  &--simple {
+    height: .25em;
+
+    .progress__bar::before {
+      content: none;
+    }
+  }
+
+  &--colorless {
+    .progress__bar {
+      background: $color-gray-85;
+    }
+  }
+}
+
+
+
+
+
+

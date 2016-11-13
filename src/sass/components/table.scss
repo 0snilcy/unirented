@@ -1,0 +1,36 @@
+.table {
+  width: 100%;
+  border: 1px solid $color-gray-91;
+
+  tr {
+    &:nth-child(even) td {
+      background-color: $color-gray-98;
+    }
+
+    &:hover td {
+      background-color: $color-gray-91;
+    }
+  }
+
+  th {
+    text-align: left;
+    padding: 13px 10px;
+    border-bottom: 1px solid $color-gray-91;
+    font-size: 1em;
+    font-weight: 500;
+  }
+
+  td {
+    padding: 13px 10px;
+  }
+
+  &--small-head {
+    th {
+      font-size: 0.813em;
+    }
+  }
+}
+
+
+
+

@@ -1,0 +1,7 @@
+mixin works-item(title, desc, pick)
+  article.works-item
+    .works-item__pick
+      svg(aria-hidden="true")
+        use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#" + pick)
+    a.works-item__title.link(href="#")= title
+    .works-item__desc= desc
