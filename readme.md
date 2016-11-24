@@ -13,4 +13,12 @@
 - `src/img/icons/` — svg-иконки для спрайта 
 - `build/` — собранный проект
 
-Более подробная иформация на странице `/gui.html`
+Более подробная иформация на странице [GUI](https://miospace.github.io/unirented/gui).
+
+Страницы:
+- [Главная](https://miospace.github.io/unirented)
+- [Заказ](https://miospace.github.io/unirented/order)
+- [Личный кабинет](https://miospace.github.io/unirented/personal)
+- [Каталог](https://miospace.github.io/unirented/catalog)
+- [Анкета](https://miospace.github.io/unirented/questionnaire)
+- [Успешная публикация](https://miospace.github.io/unirented/questionnaire-complete)
