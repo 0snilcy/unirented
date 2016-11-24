@@ -13,6 +13,7 @@
   'vendor/jquery-ui',
   'vendor/owl.carousel',
   'vendor/perfect-scrollbar',
+  'vendor/chosen.min',
   'vendor/ion.rangeSlider',
   'vendor/ion.rangeSlider.skinFlat';
 
@@ -37,7 +38,9 @@
   'components/input',
   'components/prompt',
   'components/btn-add',
+  'components/breadcrumbs';
 
+@import
   'blocks/main-header/main-header',
   'blocks/main-header/menu-header--fixed',
   'blocks/main-header/inner-menu',
@@ -52,7 +55,13 @@
   'blocks/questionnaire/questionnaire-setting',
   'blocks/questionnaire/questionnaire-complete',
   'blocks/personal',
-
+  'blocks/order/order',
+  'blocks/order/order-card',
+  'blocks/order/order-responses',
+  'blocks/order/order-respond',
+  'blocks/order/aside-card',
+  'blocks/catalog/catalog',
+  'blocks/catalog/catalog-filter',
   'blocks/main-footer';
 
 

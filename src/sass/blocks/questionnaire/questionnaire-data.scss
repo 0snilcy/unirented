@@ -76,6 +76,10 @@
     font-weight: 700;
     margin-bottom: 6px;
 
+    span {
+      color: $color-main;
+    }
+
     @include desktop {
       font-size: 1.5em;
       padding-right: 50px;
@@ -96,13 +100,17 @@
     margin: 0;
     padding: 0;
 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
     @include mobile {
       display: none;
     }
   }
 
   &__item {
-    padding: 9px 0;
+    margin: 9px 0;
     position: relative;
 
     .questionnaire-data__status {
@@ -110,7 +118,7 @@
       vertical-align: middle;
       position: absolute;
       left: -8px;
-      top: 8px;
+      top: 0;
       transform: translateX(-100%);
 
       svg {
@@ -124,10 +132,28 @@
     }
 
     &--complete {
+      border-bottom: 2px dotted $color-gray-64;
+
       svg {
         fill: $color-main;
       }
     }
+
+    &--progress {
+      svg {
+        animation: progress 5s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes progress {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
 

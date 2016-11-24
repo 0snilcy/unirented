@@ -1,0 +1,354 @@
+.order-respond {
+  padding: 20px 15px 32px;
+  border: 1px solid $color-gray-91;
+
+  &__title {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    margin-bottom: 18px;
+
+    span {
+      font-weight: 400;
+      color: $color-gray-64;
+      margin-left: 20px;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-basis: 240px;
+
+    @include desktop {
+      margin-right: 20px;
+    }
+
+    @include mobile {
+      flex-basis: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__inputs {
+    flex-basis: 100%;
+
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    align-items: center;
+
+    & > * {
+      flex-basis: 50%;
+
+      &:last-child {
+        margin-left: -1px;
+      }
+    }
+  }
+
+  &__params {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+
+    @include mobile {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__close {
+    font-size: 0;
+    width: 14px;
+    height: 14px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    position: relative;
+    transform: translateY(4px) rotate(45deg);
+    margin-left: 10px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 100%;
+      height: 2px;
+      background-color: $color-gray-64;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background-color: $color-gray-64;
+    }
+
+    &:hover {
+      &::before,
+      &::after {
+        background-color: darken($color-gray-64, 10%);
+      }
+    }
+  }
+
+  &__btn {
+    font-size: 0;
+    height: calc(1rem*#{$line-height} + 1rem + 2px);
+    width: calc(1rem*#{$line-height} + 1rem + 2px);
+    background-color: $color-gray-95;
+    border: none;
+    position: relative;
+
+    @include mobile {
+      width: 100%;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: calc(50% - 7px);
+      top: calc(50% - 1px);
+      width: 14px;
+      height: 2px;
+      background-color: $color-gray-64;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: calc(50% - 1px);
+      top: calc(50% - 7px);
+      width: 2px;
+      height: 14px;
+      background-color: $color-gray-64;
+    }
+
+    &:hover {
+      background-color: $color-gray-91;
+
+      &::before,
+      &::after {
+        background-color: darken($color-gray-64, 10%);
+      }
+    }
+  }
+
+  &__prepay {
+    width: 120px;
+
+    @include mobile {
+      width: 50%;
+    }
+
+    label {
+      margin-bottom: 5px;
+      display: block;
+    }
+  }
+
+  &__list {
+    border-top: 1px solid $color-gray-91;
+    margin-top: 25px;
+    padding-top: 25px;
+
+    &-wrap {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__add {
+    width: 64px;
+    min-height: 64px;
+    font-size: 0;
+    margin-bottom: 10px;
+
+    background-color: $color-gray-95;
+    border: none;
+    position: relative;
+
+    @include mobile {
+      width: 100%;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: calc(50% - 7px);
+      top: calc(50% - 1px);
+      width: 14px;
+      height: 2px;
+      background-color: $color-gray-64;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: calc(50% - 1px);
+      top: calc(50% - 7px);
+      width: 2px;
+      height: 14px;
+      background-color: $color-gray-64;
+    }
+
+    &:hover {
+      background-color: $color-gray-91;
+
+      &::before,
+      &::after {
+        background-color: darken($color-gray-64, 10%);
+      }
+    }
+  }
+
+  &__comment {
+    border-top: 1px solid $color-gray-91;
+    margin-top: 25px;
+    padding-top: 25px;
+  }
+
+  &__mess {
+    width: 100%;
+    resize: vertical;
+    border: 1px solid $color-gray-91;
+    padding: .5em;
+    margin-bottom: 32px;
+
+    &:not([disabled]) {
+      &:hover {
+        border-color: $color-gray-64;
+      }
+
+      &:focus,
+      &:active {
+        outline: none;
+        border-color: $color-main;
+      }
+    }
+  }
+
+  &__submit {
+    @include mobile {
+      font-size: 0;
+    }
+
+    button {
+      margin-right: 20px;
+
+      @include mobile {
+        font-size: 1rem;
+        display: block;
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.respond-item {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  background-color: $color-gray-98;
+  padding: 7px;
+  padding-right: 24px;
+  position: relative;
+
+  @include desktop {
+    width: 285px;
+    margin-right: 10px;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+
+  &__close {
+    font-size: 0;
+    width: 14px;
+    height: 14px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    transform: rotate(45deg);
+    margin-left: 10px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 100%;
+      height: 2px;
+      background-color: $color-gray-64;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background-color: $color-gray-64;
+    }
+
+    &:hover {
+      &::before,
+      &::after {
+        background-color: darken($color-gray-64, 10%);
+      }
+    }
+  }
+
+  &__pick {
+    margin-right: 10px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    padding-top: 5px;
+    border: none;
+  }
+
+  &__desc {
+    font-size: .813em;
+    color: $color-gray-64;
+  }
+}

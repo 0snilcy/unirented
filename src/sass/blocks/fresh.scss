@@ -24,16 +24,9 @@
       font-size: 1.5em;
     }
 
-    &-link {
-      text-decoration: none;
-      color: $color-text;
-
+    span {
       @include desktop {
         border-bottom: 1px solid $color-main;
-      }
-
-      &:hover {
-        border: none;
       }
     }
   }

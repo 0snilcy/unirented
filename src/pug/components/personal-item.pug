@@ -1,5 +1,5 @@
 mixin personal-item
-  .personal-item
+  a.personal-item(href="#", data-tabs-wrap="open")
     .personal-item__title
       .personal-item__maintitle Аренда автокрана
       .personal-item__subtitle Автокраны
@@ -14,7 +14,7 @@ mixin personal-item
     .personal-item__status.personal-item__status--open Открыт
 
 mixin personal-item-duble
-  .personal-item
+  a.personal-item(href="#", data-tabs-wrap="close")
     .personal-item__title
       .personal-item__maintitle Доставка леса
       .personal-item__subtitle Доставка груза

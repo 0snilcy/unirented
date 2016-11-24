@@ -23,16 +23,9 @@
       font-size: 1.5em;
     }
 
-    &-link {
-      text-decoration: none;
-      color: $color-text;
-
+    span {
       @include desktop {
         border-bottom: 1px solid $color-main;
-      }
-
-      &:hover {
-        border: none;
       }
     }
   }
@@ -135,6 +128,26 @@
   text-align: center;
   margin-bottom: 30px;
 
+  &:hover {
+    .rent-item__desc a {
+      color: $color-text;
+
+      &:hover {
+        color: $color-main;
+      }
+    }
+  }
+
+  &__header {
+    text-decoration: none;
+
+    &:hover {
+      .rent-item__title {
+        color: $color-main;
+      }
+    }
+  }
+
   &__pick {
     margin-bottom: 8px;
 
@@ -149,11 +162,24 @@
   &__title {
     margin-bottom: 8px;
     border: none;
+    color: $color-text;
   }
 
   &__desc {
     font-size: .813em;
-    color: $color-gray-64;
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: $color-gray-64;
+
+      &:not(:last-child) {
+        &::after {
+          content: ',';
+          margin-right: 5px;
+        }
+      }
+    }
 
     @include mobile {
       display: none;

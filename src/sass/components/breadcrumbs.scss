@@ -1,0 +1,31 @@
+.breadcrumbs {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  &__item {
+    &:not(:last-child) {
+      &::after {
+        content: '/';
+        color: $color-gray-64;
+        margin: 0 3px;
+      }
+    }
+  }
+
+  &__link {
+    font-size: .813em;
+
+    &:not([href]) {
+      border: none;
+
+      &:hover {
+        color: $color-text;
+      }
+    }
+  }
+}

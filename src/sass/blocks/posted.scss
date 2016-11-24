@@ -1,12 +1,12 @@
 .posted {
   display: none;
-  position: absolute;
+  position: fixed;
+  z-index: 100;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   border: 1px solid $color-gray-85;
   border-radius: 10px;
-  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .07);
 
   &__box {
     display: flex;

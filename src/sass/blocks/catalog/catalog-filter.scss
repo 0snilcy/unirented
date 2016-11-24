@@ -1,0 +1,143 @@
+.catalog-filter {
+  margin-bottom: 25px;
+
+  &__wrap {
+    border: 1px solid $color-gray-91;
+    padding: 15px 25px;
+
+    &:not(:last-child) {
+      border-bottom: none;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-text;
+    padding: 7px 0;
+    display: inline-block;
+
+    &:hover {
+      color: $color-main;
+    }
+
+    &--active {
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        left: -8px;
+        right: -8px;
+        top: 4px;
+        bottom: 4px;
+        z-index: -1;
+        background-color: $color-gray-95;
+      }
+
+      &:hover {
+        color: $color-text;
+      }
+
+      button {
+        font-size: 0;
+        background-color: transparent;
+        border: none;
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        padding: 0;
+        transform: rotate(45deg);
+        margin-bottom: 3px;
+        margin-left: 10px;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:hover {
+          &::before,
+          &::after {
+            background-color: darken($color-gray-64, 20%);
+          }
+        }
+
+        &::before,
+        &::after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 2px;
+          position: absolute;
+          left: 0;
+          top: calc(50% - 1px);
+          background-color: $color-gray-64;
+        }
+
+        &::after {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  &__slide {
+    ul,
+    button {
+      padding-left: 20px;
+    }
+
+    h3 {
+      font-size: 1rem;
+      margin: 0;
+      padding: 0;
+      margin-top: 15px;
+      cursor: pointer;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -15px;
+        top: calc(#{$line-height} * .5rem - 3px);
+        display: block;
+        height: 7px;
+        width: 7px;
+        border-left: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(-45deg);
+        transition: transform .2s ease-in-out;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 15px;
+    }
+
+    &--hide {
+      h3 {
+        &::before {
+          transform: rotate(-135deg);
+        }
+      }
+
+      div {
+        display: none;
+      }
+    }
+  }
+
+  &__box {
+    &-title {
+      margin-bottom: 7px;
+    }
+  }
+}

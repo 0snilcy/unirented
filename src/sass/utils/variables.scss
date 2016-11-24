@@ -1,5 +1,4 @@
 // Цвета
-
 $color-main: #ff9a0d;
 $color-main-darken: #e48100;
 $color-main-lighten: #ffba00;
@@ -16,12 +15,10 @@ $color-gray-91: hsl(210, 1, 91);
 $color-gray-95: hsl(210, 1, 95);
 $color-gray-98: hsl(210, 1, 98);
 
-
 $box-shadow: 0 5px 15px rgba(0, 0, 0, .05);
 
 
 // Сетка
-
 $grid-gutter-width: 30px;
 $grid-columns: 12;
 
@@ -36,4 +33,4 @@ $line-height-base: 22px;
 $line-height: $line-height-base/$font-size;
 $font-family: 'AkzidenzGroteskPro';
 
-$font: #{$font-size}/#{$line-height} $font-family, Helvetica, Tahoma, sans-serif;
+$font: 1rem/#{$line-height} $font-family, Helvetica, Tahoma, sans-serif;

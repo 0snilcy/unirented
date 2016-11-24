@@ -1,0 +1,62 @@
+mixin responses-item-inner()
+  .responses-item__inner
+    .responses-item__btns
+      button.btn.btn--small(type="button") Заблокировать
+      button.btn.btn--small(type="button") Пожаловаться
+      button.btn.btn--small.btn--main(type="button") Назначить исполнителем
+    .responses-item__items
+      article.respond-item
+        button.respond-item__close(type="button", data-close="btn") Удалить
+        img.respond-item__pick(src="img/respond-item__pick.jpg")
+        .respond-item__content
+          a.respond-item__title.link(href="#") ЧТЗ Б10
+          .respond-item__desc Электролитный проезд, 12Б
+      article.respond-item
+        button.respond-item__close(type="button", data-close="btn") Удалить
+        img.respond-item__pick(src="img/respond-item__pick.jpg")
+        .respond-item__content
+          a.respond-item__title.link(href="#") ЧТЗ Б10
+          .respond-item__desc Электролитный проезд, 12Б
+      button.responses-item__add(type="button") Добавить
+    .responses-item__desc
+      | Родился на улице Герцена, в гастрономе № 22. Известный экономист, по призванию своему — библиотекарь. В народе — колхозник. В магазине — продавец. В экономике, так сказать, необходим. Это, так сказать, система… эээ… в составе 120 единиц.
+      .responses-item__change
+        span Евген
+        =" "
+        | изменил технику (ЧТЗ Б10 — D6 Cat),
+        =" "
+        span позавчера в 22:32
+      .responses-item__change
+        span Евген
+        =" "
+        | отредактировал стоимость (Аренда: 38 000 — 30 000),
+        =" "
+        span позавчера в 22:32
+      .responses-item__change
+        span Администратор
+        =" "
+        | отредактировал комментарий к заявке,
+        =" "
+        span сегодня в 08:03
+    .responses-item__comments
+      ul
+        li
+          span Вы, позавчера в 19:40
+          | Дороговато.
+        ul
+          li
+            span Евген, позавчера в 19:40
+            | Если заказ будет больше чем на несколько часов, можно поговорить о скидках. Возможность есть. Однако для короткого срока дешевле просто никак.
+        li
+          span Вы, сегодня в 14:32
+          | Увы, есть совершенно конкретная задача на это время. Спасибо!
+        ul
+          li
+            span Евген, сегодня в 23:46
+            | Если не трудно, оставьте пожалуйста отзыв :) Спасибо
+
+      .responses-item__textarea
+        textarea.input(placeholder="Ваше сообщение")
+        svg(aria-hidden="true")
+          use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#send")
+

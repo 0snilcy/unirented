@@ -4,8 +4,8 @@
 
   .questionnaire-setting__specific-item
     .questionnaire-setting__specific-title Длина борта
-    .input-helper.input-helper--range(data-before="от", data-after="м")
-      input.input.input-helper__input(type="number")
+    .input-helper.input-helper--range.input-helper--before.input-helper--after(data-before="от", data-after="м")
+      input.input.input-helper__input(type="text")
       .range(
         data-type="single"
         data-min="0",
@@ -15,8 +15,8 @@
 
   .questionnaire-setting__specific-item
     .questionnaire-setting__specific-title Грузоподъемность борта
-    .input-helper.input-helper--range(data-before="от", data-after="т")
-      input.input.input-helper__input(type="number")
+    .input-helper.input-helper--range.input-helper--before.input-helper--after(data-before="от", data-after="т")
+      input.input.input-helper__input(type="text")
       .range(
         data-type="single"
         data-min="0",
@@ -59,7 +59,7 @@
 
   .questionnaire-setting__back Назад,&nbsp;
     a.pseudo-link(href="#", data-step="back", data-content="Назад") к третьему шагу
-    button.questionnaire-setting__btn.btn(type="button", data-step="publish", data-content="Завершить") Разместить заказ
+    a.questionnaire-setting__btn.btn(href="questionnaire-complete.html", data-step="publish", data-content="Завершить") Разместить заказ
 
 
 

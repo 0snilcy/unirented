@@ -1,13 +1,4 @@
 .personal {
-  @include container();
-  padding-top: 56px;
-  padding-bottom: 100px;
-
-  @include mobile {
-    padding-top: 27px;
-    padding-bottom: 64px;
-  }
-
   &__title {
     text-transform: uppercase;
     padding-bottom: 0;
@@ -101,9 +92,15 @@
 
 .personal-item {
   border-bottom: 1px solid $color-gray-91;
-
+  text-decoration: none;
+  color: $color-text;
   display: flex;
   flex-direction: row;
+
+  &:hover {
+    background-color: $color-gray-95;
+    cursor: pointer;
+  }
 
   @include mobile {
     flex-wrap: wrap;
@@ -139,15 +136,20 @@
   &__place {
     align-self: center;
     display: flex;
+    padding: 8px 0;
 
     @include desktop {
       flex-basis: calc(100% / 8 * 2);
-      padding: 8px 0;
     }
 
     @include mobile {
       flex-basis: 65%;
       flex-grow: 1;
+      padding: 0;
+
+      &--double {
+        padding-left: 20px;
+      }
     }
 
     &--double {
@@ -230,6 +232,8 @@
 
     @include desktop {
       flex-basis: calc(100% / 8 * 1);
+
+      flex-shrink: 0;
     }
 
     @include mobile {

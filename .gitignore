@@ -9,5 +9,5 @@ build
 *.log
 *.pdf
 *.psd
-*.sublime*
+*.sublime-workspace
 Thumbs.db

@@ -1,3 +1,4 @@
+
 $mobileMenuTop: 12px;
 
 // Index
@@ -26,13 +27,12 @@ $index-menuUser: 5;
     @include mobile {
       position: relative;
       left: -100%;
-      transition: left .3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      z-index: $index-menuWrap;
 
       &--active {
         left: 0;
-        z-index: $index-menuWrap;
-        display: flex;
-        flex-direction: column;
       }
     }
   }
@@ -54,7 +54,7 @@ $index-menuUser: 5;
     @include mobile {
       display: block;
       position: fixed;
-      z-index: 5;
+      z-index: 15;
       top: $mobileMenuTop;
       left: 50%;
       transform: translateX(-50%);
@@ -278,6 +278,10 @@ $index-menuUser: 5;
   &__login {
     border: none;
 
+    @include mobile {
+      font-size: 0;
+    }
+
     &:hover {
       svg {
         fill: $color-main;
@@ -322,6 +326,20 @@ $index-menuUser: 5;
   &__order {
     background-color: $color-gray-95;
     position: relative;
+    z-index: 10;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      z-index: -1;
+      background-color:  $color-gray-95;
+      pointer-events: none;
+    }
 
     @include mobile {
       order: -1;
@@ -334,12 +352,12 @@ $index-menuUser: 5;
   }
 
   &__order-item {
-    padding: 15px 20px;
+    padding: 16px 20px;
     border-right: 1px solid $color-gray-91;
     border-bottom: 1px solid transparent;
     text-decoration: none;
     color: $color-text;
-    cursor: default;
+    cursor: pointer;
 
     @include mobile {
       display: block;
@@ -364,7 +382,10 @@ $index-menuUser: 5;
         border-bottom: 1px solid $color-main;
 
         & > .inner-menu {
-          display: block;
+          top: 100%;
+          opacity: 1;
+          transition: all .2s ease-in-out;
+          pointer-events: auto;
         }
       }
     }
@@ -396,19 +417,107 @@ $index-menuUser: 5;
 
   &__search {
     border: none;
-    padding: 15px 50px;
+    padding: 16px 50px;
     line-height: inherit;
     background-color: transparent;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
     box-sizing: border-box !important;
     width: 100%;
 
+    &:active,
     &:focus {
       outline: none;
       background-color: #fff;
+      border-color: $color-gray-91;
+      border-right: 1px solid $color-gray-91;
+    }
+
+    &-clear {
+      background-color: transparent;
+      font-size: 0;
+      display: block;
+      padding: 0;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: 22px;
+      right: 20px;
+      z-index: 2;
+      opacity: 0;
+      border: none;
+      transform: rotate(45deg);
+
+      &:focus {
+        outline: none;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        background-color: $color-text;
+      }
+
+      &::after {
+        left: calc(50% - 1px);
+        top: 0;
+        height: 100%;
+        width: 2px;
+      }
+
+      &::before {
+        top: calc(50% - 1px);
+        left: 0;
+        width: 100%;
+        height: 2px;
+      }
+
+      &:hover {
+        &::before,
+        &::after {
+          background-color: lighten($color-gray-64, 20%);
+        }
+      }
+
+      &--active {
+        opacity: 1;
+        transition: all .2s ease-in-out;
+      }
+
+      @include mobile {
+        display: block;
+        position: fixed;
+        right: 2%;
+        top: 10px;
+        font-size: 0;
+        width: 15px;
+        height: 15px;
+        transform: rotate(45deg);
+        background-color: transparent;
+        border: none;
+
+        &::before,
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          background-color: $color-text;
+          width: 100%;
+          height: 2px;
+          top: 15px;
+          left: 0;
+        }
+
+        &::after {
+          transform: rotate(90deg);
+        }
+      }
     }
 
     @include desktop {
-      &:hover {
+      &:hover:not(:focus) {
         background-color: $color-gray-91;
       }
     }
@@ -452,45 +561,6 @@ $index-menuUser: 5;
       z-index: -2;
       left: 60px;
       transition: left .2s ease-out;
-    }
-  }
-
-  &__search-close {
-    opacity: 0;
-    display: none;
-
-    @include mobile {
-      display: block;
-      position: fixed;
-      right: 2%;
-      top: 10px;
-      font-size: 0;
-      width: 15px;
-      height: 15px;
-      transform: rotate(45deg);
-      background-color: transparent;
-      border: none;
-
-      &--active {
-        opacity: 1;
-        transition: all .2s ease-in-out;
-      }
-
-      &::before,
-      &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        background-color: $color-text;
-        width: 100%;
-        height: 2px;
-        top: 15px;
-        left: 0;
-      }
-
-      &::after {
-        transform: rotate(90deg);
-      }
     }
   }
 

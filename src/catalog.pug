@@ -1,0 +1,165 @@
+extends pug/layout/base
+include pug/components/catalog-item
+
+block title
+  title Каталог
+
+block main
+  main.content
+
+    block content
+      .container
+
+        - var listItem = ["ЧТЗ Б10","D6 Cat","ЧТЗ Т 800","TD-15M EXTRA"];
+        - var listType = ["Карьерные","Гусеничные","Колесные","Мини-бульдозеры","Болотоходы","С лебедкой"];
+        - var category = ["Автовышки","Автогрейдеры","Автокраны","Бетононасосы","Бульдозеры","Грузовики","Дорожная техника","Землеройная техника","Катки","Карьерная техника","Коммунальная техника"];
+
+        h1 Техника
+
+        ul.breadcrumbs
+          li.breadcrumbs__item
+            a.breadcrumbs__link.link(href="/") Главная
+          li.breadcrumbs__item
+            a.breadcrumbs__link.link(href="/") Каталог
+          li.breadcrumbs__item
+            a.breadcrumbs__link.link Техника
+
+        .catalog
+          button.catalog__show.btn(type="button", data-show="fileter") Подобрать по характеристикам
+
+          .catalog__main
+            - for (var i = 2; i > 0; i--)
+              +catalog-item()
+              +catalog-item-slider()
+
+          aside.catalog__aside
+
+            .catalog__wrap
+              .catalog__wrap-title Фильтр
+                button.catalog__wrap-btn(type="button") Закрыть
+
+
+              .catalog__wrap-content
+
+                section.category
+                  ul.category__list
+                    each item in category
+                      li.category__item
+                        a.category__link(href="#")= item
+
+                  ul.category__list(data-more="wrap")
+                    each item in category
+                      li.category__item
+                        a.category__link(href="#")= item
+                  button.category__more(type="button", data-more="btn") Еще&#8230;
+
+                section.catalog-filter
+                  .catalog-filter__wrap
+                    .catalog-filter__slide
+                      h3 Популярные модели
+                      div
+                        ul.catalog-filter__list
+                          each item in listItem
+                           li.catalog-filter__item
+                             a.catalog-filter__link(href="#")= item
+                        ul.catalog-filter__list(data-more="wrap")
+                          each item in listItem
+                           li.catalog-filter__item
+                             a.catalog-filter__link(href="#")= item
+                        button.category__more(type="button", data-more="btn") Еще&#8230;
+
+                    .catalog-filter__slide.catalog-filter__slide--hide
+                      h3 Популярные модели
+                      div
+                        ul.catalog-filter__list
+                          each item in listItem
+                           li.catalog-filter__item
+                             a.catalog-filter__link(href="#")= item
+                        ul.catalog-filter__list(data-more="wrap")
+                          each item in listItem
+                           li.catalog-filter__item
+                             a.catalog-filter__link(href="#")= item
+                        button.category__more(type="button", data-more="btn") Еще&#8230;
+
+                  .catalog-filter__wrap
+                    ul.catalog-filter__list(data-list="type")
+                      each item in listType
+                       li.catalog-filter__item
+                         a.catalog-filter__link(href="#")= item
+
+                    ul.catalog-filter__list(data-list="type", data-more="wrap")
+                      each item in listType
+                       li.catalog-filter__item
+                         a.catalog-filter__link(href="#")= item
+                    button.category__more(type="button", data-more="btn") Еще&#8230;
+
+                  .catalog-filter__wrap
+                    .catalog-filter__box
+                      .catalog-filter__box-title Длина отвала по ножу
+                      .input-helper.input-helper--range.input-helper--before.input-helper--after(data-before="от", data-after="мм")
+                        input.input.input-helper__input(type="text")
+                        .range(
+                          data-type="single"
+                          data-min="0",
+                            data-hide-min-max="true",
+                            data-max="20",
+                            data-from="10")
+                    .catalog-filter__box
+                      .catalog-filter__box-title Высота отвала
+                      .input-helper.input-helper--range.input-helper--before.input-helper--after(data-before="от", data-after="мм")
+                        input.input.input-helper__input(type="text")
+                        .range(
+                          data-type="single"
+                          data-min="0",
+                            data-hide-min-max="true",
+                            data-max="20",
+                            data-from="10")
+                    .catalog-filter__box
+                      .catalog-filter__box-title Глубина резания
+                      .input-helper.input-helper--range.input-helper--before.input-helper--after(data-before="от", data-after="мм")
+                        input.input.input-helper__input(type="text")
+                        .range(
+                          data-type="single"
+                          data-min="0",
+                            data-hide-min-max="true",
+                            data-max="20",
+                            data-from="10")
+                    .catalog-filter__box
+                      .catalog-filter__box-title Тип управления валом
+                      .select
+                        select.select__item
+                          option Гидравлический
+                          option Два
+                          option Три
+                          option Четыре
+
+            section.aside-feature
+              .aside-feature__item Вы заполняете заявку с нужными параметрами
+              .aside-feature__item Мы рассылаем её партнерам с подходящим парком техники
+              .aside-feature__item Вы получаете исполнителя по самой лучшей цене
+
+          .catalog__feedback
+            button.catalog__feedback-close(type="button", data-close="btn") Закрыть
+
+            .catalog__feedback-container
+              .catalog__feedback-title Оставьте свой номер телефона, и наш менеджер свяжется
+                br/ с вами для уточнения всех необходимых деталей
+
+              form.catalog__feedback-form
+                .catalog__feedback-wrap
+                  .catalog__feedback-icon
+                    svg(aria-hidden="true")
+                      use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#phone")
+                  input.catalog__feedback-input.input(type="text", data-input="phone", placeholder="+7(___)___-__-__")
+                  input.catalog__feedback-input.input(type="text", placeholder="Как к вам обращаться?")
+                  button.catalog__feedback-btn.btn.btn--main(data-title="Получить лучшее предложение", type="submit") Получить лучшее предложение
+                  .catalog__feedback-icon(data-show="fileter")
+                    svg(aria-hidden="true")
+                      use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#filter")
+
+
+
+
+
+
+

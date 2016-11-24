@@ -39,8 +39,14 @@
   position: relative;
 
   &__input {
-    padding-left: 34px;
-    padding-right: 24px;
+  }
+
+  &--before input {
+    padding-left: 35px;
+  }
+
+  &--after input {
+    padding-right: 35px;
   }
 
   &::before {

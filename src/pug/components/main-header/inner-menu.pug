@@ -7,24 +7,58 @@
         strong Москве
       .inner-menu__title-icon
         svg(aria-hidden="true")
-          use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#2")
+          use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="")
 
     .inner-menu__top
       .inner-menu__wrap
         .inner-menu__subtitle Популярное
         ul.inner-menu__list.inner-menu__list--popular
-          - var popular = ["Автогрейдеры", "Автокраны", "Бетононасосы", "Грузовые автомобили", "Погрузчики"]
+          -
+            var popular = [
+              {
+                title: "Автогрейдеры",
+                icon: "1"
+              },{
+                title: "Автокраны",
+                icon: "2"
+              },{
+                title: "Грузовые автомобили",
+                icon: "3"
+              },{
+                title: "Бетононасосы",
+                icon: "4"
+              },{
+                title: "Погрузчики",
+                icon: "5"
+              }
+            ];
+
           each item in popular
             li.inner-menu__list-item
-              a.inner-menu__list-link(href="#")= item
+              a.inner-menu__list-link(href="#", data-icon="#" + item.icon)= item.title
 
       .inner-menu__wrap
         .inner-menu__subtitle недавно заказали
         ul.inner-menu__list
-          - var recently = ["Автокраны", "Тралы", "Тракторы", "Самосвалы"]
+          -
+            var recently = [
+              {
+                title: "Автокраны",
+                icon: "1"
+              },{
+                title: "Тралы",
+                icon: "2"
+              },{
+                title: "Тракторы",
+                icon: "3"
+              },{
+                title: "Самосвалы",
+                icon: "5"
+              }
+            ];
           each item in recently
             li.inner-menu__list-item
-              a.inner-menu__list-link(href="#")= item
+              a.inner-menu__list-link(href="#", data-icon="#" + item.icon)= item.title
 
     .inner-menu__alphabet
       .inner-menu__wrap

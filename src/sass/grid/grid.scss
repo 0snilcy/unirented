@@ -15,6 +15,7 @@
 
   @include desktop {
     width: $width-desktop;
+    box-sizing: content-box;
     padding-left: floor(($gutter / 2));
     padding-right: ceil(($gutter / 2));
   }
@@ -30,8 +31,15 @@
   display: flex;
   flex-flow: row wrap;
 
-  margin-right: -($grid-gutter-width / 2);
-  margin-left: -($grid-gutter-width / 2);
+  @include desktop {
+    margin-right: -($grid-gutter-width / 2);
+    margin-left: -($grid-gutter-width / 2);
+  }
+
+  @include mobile {
+    margin-right: -2%;
+    margin-left: -2%;
+  }
 }
 
 @for $i from 1 through $grid-columns {
@@ -68,5 +76,11 @@
 
 .row {
   @include row();
+}
+
+[class^=col-] {
+  &:empty {
+    background-color: transparent !important;
+  }
 }
 

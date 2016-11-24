@@ -26,7 +26,7 @@
     padding: 8px 10px;
   }
 
-  &--color {
+  &--main {
     background-color: $color-main;
 
 
@@ -42,6 +42,15 @@
         background-color: $color-main-darken;
       }
     }
+  }
+
+  span {
+    background-color: #fff;
+    display: inline-block;
+    line-height: 1.188em;
+    border-radius: 3px;
+    padding: 0 5px;
+    margin-left: .5em;
   }
 }
 

@@ -26,11 +26,12 @@ header.main-header
           a.pseudo-link.main-header__phone-discuss(href="#") Обсудить задачу со специалистом
       .main-header__user
 
-        //- Авторизованный пользователь
-        include authorized
+        block user
+          //- Авторизованный пользователь
+          //- include authorized
 
-        //- Новый пользователь
-        //- include registration
+          //- Новый пользователь
+          include registration
 
     section.main-header__order
       .main-header__container
@@ -49,16 +50,16 @@ header.main-header
           include inner-menu
 
         form.main-header__form
-          input.main-header__search(type="search", placeholder="например, Caterpillar")
+          input.main-header__search(type="text", data-autocomplete="search", placeholder="например, Caterpillar")
           .main-header__search-icon
             svg(aria-hidden="true")
               use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#search")
-          button.main-header__search-close(type="button") Закрыть
+          button.main-header__search-clear(type="button") Закрыть
         .main-header__btn
           button.main-header__btn-item(type="button") Размеситить заказ
           span.main-header__btn-plus +
 
-    section.main-header__submenu
+    //- section.main-header__submenu
       .main-header__container
         ul.main-header__submenu-list
           - var submenu = [{title: "Главная"},{title: "Тезника"},{title: "Грузовые автомобили"},{title: "Длинометры", active: true}];

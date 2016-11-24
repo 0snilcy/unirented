@@ -144,6 +144,11 @@
     right: 0;
     top: 0;
     bottom: 0;
+    margin: auto;
+    padding: 50px;
+    width: auto;
+    height: 60vh;
+
     background-color: $color-text-light;
 
     display: flex;
@@ -166,6 +171,7 @@
     color: #5f676b;
     padding: 11px 20px;
     margin-top: 50px;
+    min-height: 46px;
 
     &:hover {
       color: lighten(#5f676b, 10%);
@@ -177,8 +183,8 @@
   }
 
   &__video {
-    width: 1280px;
-    height: 720px;
+    // width: 1280px;
+    // height: 720px;
   }
 }
 

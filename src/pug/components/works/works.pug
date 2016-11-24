@@ -1,8 +1,9 @@
 include works-item
 
 section.works
-  .works__title Выполнение&nbsp;
-    a.works__title-link(href="#") работ
+  .works__title Выполнение
+    =" "
+    span работ
   .works__subtitle.prompt.prompt--question Вы оказываете услуги?&nbsp;
     a.works__subtitle-link.link(href="#") Получайте заказы
   a.works__btn(href="#", data-title="Заказать", data-post="btn") Разместить заказ
@@ -74,7 +75,4 @@ section.works
       strong Подсказка.
       |  Показаны наиболее популярные услуги
     button.works__footer-btn.btn(type="button", data-hide="btn") Показать все услуги
-
-  include ../posted
-
 

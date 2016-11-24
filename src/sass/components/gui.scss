@@ -1,14 +1,30 @@
 .gui {
-  padding: 100px 0;
 
-  h1,h2,h3,h4,h5,h6 {
-    outline: 1px solid #7ce5ff;
-    background:
-      repeating-linear-gradient(
-        -45deg,
-        transparent, transparent 5px,
-        #7ce5ff 5px, #7ce5ff 6px
-    );
+  .type {
+    h1,h2,h3,h4,h5,h6 {
+      outline: 1px solid #7ce5ff;
+      background:
+        repeating-linear-gradient(
+          -45deg,
+          transparent, transparent 5px,
+          #7ce5ff 5px, #7ce5ff 6px
+      );
+    }
+  }
+
+  .example {
+    &-grid {
+      [class^=col-] {
+        background-color: $color-gray-95;
+        padding: 15px;
+      }
+    }
+  }
+
+  code {
+    a {
+      margin-right: 0;
+    }
   }
 
   .row > * > * {
@@ -29,6 +45,12 @@
 
   .input-helper--range {
     margin-bottom: 25px;
+  }
+
+  .breadcrumbs {
+    a {
+      margin-right: 0;
+    }
   }
 }
 

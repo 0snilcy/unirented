@@ -1,0 +1,220 @@
+mixin catalog-item()
+  article.catalog-item
+     .catalog-item__mobile
+      .catalog-item__title Бульдозер ЧТЗ Б10
+      .catalog-item__company ООО «ТестСтрой»
+     .catalog-item__main
+       .catalog-item__pick
+         img.catalog-item__image(src="img/catalog-item__image.jpg")
+       .catalog-item__content
+         .catalog-item__header
+           .catalog-item__title Бульдозер ЧТЗ Б10
+           .catalog-item__price от
+             =" "
+             strong 1 200
+             =" "
+             | руб/смена
+         ul.catalog-item__list
+           -
+             var listUnits = [
+               {
+                 name: "Ширина отвала",
+                 value: "3,2",
+               },{
+                 name: "Производитель",
+                 value: "Komatsu",
+               },{
+                 name: "Ширина борта",
+                 value: "30 м",
+               },{
+                 name: "Тип техники",
+                 value: "Бульдозер",
+               },{
+                 name: "Объем отвала ",
+                 value: "400 м<sup>3</sup>",
+               },{
+                 name: "Тяговый класс",
+                 value: "10",
+               },{
+                 name: "Грузоподъемность",
+                 value: "25 т",
+               },{
+                 name: "Объем ковша",
+                 value: "400 м<sup>3</sup>",
+               },{
+                 name: "Тяговый класс",
+                 value: "10",
+               }
+             ];
+           each item in listUnits
+             li.catalog-item__unit
+               sapn.catalog-item__unit-name= item.name
+               =" — "
+               sapn.catalog-item__unit-value!= item.value
+           each item in listUnits
+             li.catalog-item__unit
+               sapn.catalog-item__unit-name= item.name
+               =" — "
+               sapn.catalog-item__unit-value!= item.value
+
+         ul.catalog-item__list(data-slide="wrap")
+         .catalog-item__control
+           a.pseudo-link(href="#", data-title="Свернуть", data-slide="btn") Подробнее
+           .catalog-item__pay
+             .catalog-item__pay-icon
+               svg(aria-hidden="true")
+                 use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#credit-card")
+             | Наличный и бзналичный расчет
+     .catalog-item__desc.
+       Аренда автокранов 16 - 25 тонн, 18-28 метров длинна стрелы. Назначение: для погрузочно-разгрузочных и строительно-монтажных работ на рассредоточенных объектах, фасадные работы, отделочные работы, монтаж металлоконструкций, высотные работы и ремонтные, демонтажные.
+     footer.catalog-item__footer
+       .catalog-item__phone
+         button.catalog-item__phone-btn(type="button")
+           .catalog-item__phone-icon
+             svg(aria-hidden="true")
+               use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#phone")
+           | Показать телефон
+         .catalog-item__phone-number.catalog-item__phone-number--hide
+           .catalog-item__phone-icon
+             svg(aria-hidden="true")
+               use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#phone")
+           | +7 499 707-77-30
+       .catalog-item__company
+         .catalog-item__company-icon
+           svg(aria-hidden="true")
+             use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#placemark")
+         | ООО «ТестСтрой»
+       .catalog-item__place
+         .catalog-item__place-icon
+           svg(aria-hidden="true")
+             use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#placemark")
+         |  Московская область, г.Тест, ул. Тестировачная длинное название в две строки, если в одну не помещается
+
+
+mixin catalog-item-slider()
+  article.catalog-item
+     .catalog-item__mobile
+      .catalog-item__title Бульдозер ЧТЗ Б10
+      .catalog-item__company ООО «ТестСтрой»
+     .catalog-item__main
+       .catalog-item__pick(data-catalog="slider")
+         img.catalog-item__image(src="img/catalog-item__image.jpg")
+         img.catalog-item__image(src="img/catalog-item__image.jpg")
+         img.catalog-item__image(src="img/catalog-item__image.jpg")
+         img.catalog-item__image(src="img/catalog-item__image.jpg")
+         img.catalog-item__image(src="img/catalog-item__image.jpg")
+       .catalog-item__content
+         .catalog-item__header
+           .catalog-item__title Бульдозер ЧТЗ Б10
+           .catalog-item__price от
+             =" "
+             strong 1 200
+             =" "
+             | руб/смена
+         ul.catalog-item__list
+           -
+             var listUnits = [
+               {
+                 name: "Ширина отвала",
+                 value: "3,2",
+               },{
+                 name: "Производитель",
+                 value: "Komatsu",
+               },{
+                 name: "Ширина борта",
+                 value: "30 м",
+               },{
+                 name: "Тип техники",
+                 value: "Бульдозер",
+               },{
+                 name: "Объем отвала ",
+                 value: "400 м<sup>3</sup>",
+               },{
+                 name: "Тяговый класс",
+                 value: "10",
+               },{
+                 name: "Грузоподъемность",
+                 value: "25 т",
+               },{
+                 name: "Объем ковша",
+                 value: "400 м<sup>3</sup>",
+               },{
+                 name: "Тяговый класс",
+                 value: "10",
+               }
+             ];
+           each item in listUnits
+             li.catalog-item__unit
+               sapn.catalog-item__unit-name= item.name
+               =" — "
+               sapn.catalog-item__unit-value!= item.value
+         ul.catalog-item__list(data-slide="wrap")
+           -
+             var listUnits = [
+               {
+                 name: "Ширина отвала",
+                 value: "3,2",
+               },{
+                 name: "Производитель",
+                 value: "Komatsu",
+               },{
+                 name: "Ширина борта",
+                 value: "30 м",
+               },{
+                 name: "Тип техники",
+                 value: "Бульдозер",
+               },{
+                 name: "Объем отвала ",
+                 value: "400 м<sup>3</sup>",
+               },{
+                 name: "Тяговый класс",
+                 value: "10",
+               },{
+                 name: "Грузоподъемность",
+                 value: "25 т",
+               },{
+                 name: "Объем ковша",
+                 value: "400 м<sup>3</sup>",
+               },{
+                 name: "Тяговый класс",
+                 value: "10",
+               }
+             ];
+           each item in listUnits
+             li.catalog-item__unit
+               sapn.catalog-item__unit-name= item.name
+               =" — "
+               sapn.catalog-item__unit-value!= item.value
+         .catalog-item__control
+           a.pseudo-link(href="#", data-title="Свернуть", data-slide="btn") Подробнее
+           .catalog-item__pay
+             .catalog-item__pay-icon
+               svg(aria-hidden="true")
+                 use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#credit-card")
+             | Наличный и бзналичный расчет
+     .catalog-item__desc.
+       Аренда автокранов 16 - 25 тонн, 18-28 метров длинна стрелы. Назначение: для погрузочно-разгрузочных и строительно-монтажных работ на рассредоточенных объектах, фасадные работы, отделочные работы, монтаж металлоконструкций, высотные работы и ремонтные, демонтажные.
+     footer.catalog-item__footer
+       .catalog-item__phone
+         button.catalog-item__phone-btn(type="button")
+           .catalog-item__phone-icon
+             svg(aria-hidden="true")
+               use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#phone")
+           | Показать телефон
+         .catalog-item__phone-number.catalog-item__phone-number--hide
+           .catalog-item__phone-icon
+             svg(aria-hidden="true")
+               use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#phone")
+           | +7 499 707-77-30
+       .catalog-item__company
+         .catalog-item__company-icon
+           svg(aria-hidden="true")
+             use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#placemark")
+         | ООО «ТестСтрой»
+       .catalog-item__place
+         .catalog-item__place-icon
+           svg(aria-hidden="true")
+             use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#placemark")
+         |  Московская область, г.Тест, ул. Тестировачная длинное название в две строки, если в одну не помещается
+
+

@@ -1,7 +1,8 @@
 mixin works-item(title, desc, pick)
   article.works-item
-    .works-item__pick
-      svg(aria-hidden="true")
-        use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#" + pick)
-    a.works-item__title.link(href="#")= title
+    a.works-item__header(href="#")
+      .works-item__pick
+        svg(aria-hidden="true")
+          use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#" + pick)
+      .works-item__title= title
     .works-item__desc= desc

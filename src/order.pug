@@ -1,0 +1,234 @@
+extends pug/layout/base
+include pug/components/responses-item
+
+block title
+  title Заказ
+
+block content
+  section.order
+    .order__content
+      section.order-card
+        .order-card__box
+          header.order-card__header
+            span.order-card__last Владимир В., вчера в 15:56
+            a.order-card__appeal(href="#") Пожаловаться
+          .order-card__wrap
+            .order-card__title-wrap
+              .order-card__title Длинномер
+              .order-card__date 28 августа, полный день
+            .order-card__info
+              .order-card__info-wrap
+                .order-card__subtitle Характеристики
+                ul
+                  li Борт от 5м
+                  li Грузоподъёмность от 4т
+                  li Механизированая погрузка
+                  li Без тента
+                  li С боковыми стойками
+              .order-card__info-wrap
+                .order-card__subtitle Место
+
+                .order-card__route
+                  a.pseudo-link(href="#") Москва, ул. Академика Королёва 12
+                  a.pseudo-link(href="#") Москва, ул. Погост
+                button.order-card__info-btn(type="button", data-route="293 км") Открыть карту
+
+            .order-card__desc
+              .order-card__subtitle Комментарий заказчика
+              .order-card__comment
+                p Требуется перевозка разноформатных пиломатериалов в пределах города. Склад недалеко от кольца, хороший подъезд. Грузчики не справятся, нужен автопогрузчик. Оплата на месте по факту выполнения работ. Прошу указывать ваши цены.
+              .order-card__contacts
+                .order-card__subtitle Контактная информация
+                .order-card__btn-wrap
+                  button.btn.btn--small(type="button") Открыть контакты
+                    span
+                      strong 100
+                      !=" &#8381;"
+                  button.btn.btn--small.btn--main(type="button") Оформить подписку
+        footer.order-card__footer
+          .order-card__close(data-mobile="До закрытия") До закрытия заявки
+            span 24:57:33
+          .order-card__share Рассказать о заказе
+            a.order-card__social(href="#")
+              svg(aria-hidden="true")
+                use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#vk")
+            a.order-card__social(href="#")
+              svg(aria-hidden="true")
+                use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#facebook")
+            a.order-card__social(href="#")
+              svg(aria-hidden="true")
+                use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#google-plus")
+
+      section.order-responses
+        .order-responses__title
+          strong Отклики на заказ
+          =" 21/"
+          span 6
+        .order-responses__wrap
+          button.btn.btn--main.btn--small(type="button") Оставить отклик
+
+          .tabs
+            button(type="button").tabs__hidden
+            .tabs__wrap
+              button(type="button").tabs__item.tabs__item--curent по времени
+              button(type="button").tabs__item по исполнителям
+              button(type="button").tabs__item по цене
+        .order-responses__list
+
+          article.responses-item
+            a.responses-item__content(href="#")
+              .responses-item__price
+                strong 16 290
+                !=" &#8381;"
+              .responses-item__title За весь объём работ
+              .responses-item__user
+                .responses-item__user-rating.responses-item__user-rating--bad 2.5
+                .responses-item__user-wrap
+                  .responses-item__user-name Александр
+                  .responses-item__user-time 3 минуты назад
+              .responses-item__comment
+                .responses-item__comment-icon
+                  svg(aria-hidden="true")
+                    use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#mess")
+                .responses-item__comment-value 22/
+                  span 6
+            +responses-item-inner()
+
+          article.responses-item
+            a.responses-item__content(href="#")
+              .responses-item__price
+                strong 16 290
+                !=" &#8381;"
+              .responses-item__title Потребуется предоплата. Aренда: 30 000, Доставка: 6
+              .responses-item__user
+                .responses-item__user-rating.responses-item__user-rating--good 7.4
+                .responses-item__user-wrap
+                  .responses-item__user-name Александр
+                  .responses-item__user-time 4 часа 25 минут назад
+            +responses-item-inner()
+
+          article.responses-item
+            a.responses-item__content(href="#")
+              .responses-item__price
+                strong 16 290
+                !=" &#8381;"
+              .responses-item__title Потребуется предоплата. Aренда: 30 000, Доставка: 6
+              .responses-item__user
+                .responses-item__user-rating.responses-item__user-rating--good 7.4
+                .responses-item__user-wrap
+                  .responses-item__user-name Александр
+                  .responses-item__user-time 4 часа 25 минут назад
+            +responses-item-inner()
+
+      section.order-respond
+        .order-respond__title Ваш отклик
+        .order-respond__subtitle Стоимость работ
+          =" "
+          span Пожалуйста, указывайте точную стоимость каждого вида услуг
+        .order-respond__params
+          .order-respond__box Аренда
+            .order-respond__inputs
+              .input-helper.input-helper--after(data-after="руб")
+                input.input.input-helper__input(type="text")
+              .select
+                select.select__item
+                  option Весь срок
+                  option Два
+                  option Три
+                  option Четыре
+          .order-respond__box Доставка
+            button.order-respond__close(type="button", data-close="btn") Закрыть
+            .order-respond__inputs
+              .input-helper.input-helper--after(data-after="руб")
+                input.input.input-helper__input(type="text")
+              .select
+                select.select__item
+                  option Весь срок
+                  option Два
+                  option Три
+                  option Четыре
+          button.order-respond__btn(type="button") Добавить
+        .order-respond__prepay
+          .checkbox
+            input(type="checkbox", id="checkbox-1").checkbox__input
+            label(for="checkbox-1").checkbox__label Предоплата
+          .input-helper.input-helper--after(data-after="руб")
+            input.input.input-helper__input(type="text")
+        .order-respond__list
+          .order-respond__subtitle Техника для этого заказа
+          .order-respond__list-wrap
+            article.respond-item
+              button.respond-item__close(type="button", data-close="btn") Удалить
+              img.respond-item__pick(src="img/respond-item__pick.jpg")
+              .respond-item__content
+                a.respond-item__title.link(href="#") ЧТЗ Б10
+                .respond-item__desc Электролитный проезд, 12Б
+            button.order-respond__add(type="button") Добавить
+        .order-respond__comment
+          .order-respond__subtitle Ваш комментарий
+          textarea.order-respond__mess
+        .order-respond__submit
+          button.btn.btn--main(type="submit") Добавить
+          | Общая стоимость выполнения работ
+          =" "
+          strong 50 000
+            !=" &#8381;"
+
+    aside.order__aside
+      .aside-card.aside-card--warning
+        button.aside-card__close(type="button", data-close="btn") Закрыть
+        .aside-card__title Оформите подписку
+        .aside-card__desc Чтобы видеть контакты всех заказчиков, и многое другое
+        .aside-card__btn
+          button(type="button") Оформить
+          strong 2 990
+            !=" &#8381;"
+
+      .aside-card.aside-card--danger
+        button.aside-card__close(type="button", data-close="btn") Закрыть
+        .aside-card__title Оформите подписку
+        .aside-card__desc Чтобы видеть контакты всех заказчиков, и многое другое
+        .aside-card__btn
+          button(type="button") Оформить
+          strong 2 990
+            !=" &#8381;"
+
+      .aside-card.aside-card--success
+        button.aside-card__close(type="button", data-close="btn") Закрыть
+        .aside-card__title Оформите подписку
+        .aside-card__desc Чтобы видеть контакты всех заказчиков, и многое другое
+        .aside-card__btn
+          button(type="button") Оформить
+          strong 2 990
+            !=" &#8381;"
+
+      .aside-card
+        button.aside-card__close(type="button", data-close="btn") Закрыть
+        .aside-card__stats
+          .aside-card__stats-item
+            .aside-card__stats-value 6 434
+            .aside-card__stats-title Потенциальных исполнителя получили этот заказ
+          .aside-card__stats-item
+            .aside-card__stats-value 3 253
+            .aside-card__stats-title Человека уже просмотрели этот заказ
+          .aside-card__stats-item
+            .aside-card__stats-value 52
+            .aside-card__stats-title Сообщения для заказчика
+              .aside-card__stats-subtitle
+                strong 12
+                =" "
+                | из них просматривают сейчас
+          .aside-card__stats-item
+            .aside-card__stats-value 16
+            .aside-card__stats-title Ставок
+
+    .order__map
+      button.order__map-close(type="button", data-close="btn") Закрыть
+      script(
+        type="text/javascript",
+        charset="utf-8",
+        src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=g0Ra1pmNYRYj3JPym3dCEyzE5ArZ9pWW&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true",
+        async
+      )
+
+
