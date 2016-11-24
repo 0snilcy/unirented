@@ -1,6 +1,5 @@
 node_modules
 _temp
-build
 .publish
 
 .DS_Store
