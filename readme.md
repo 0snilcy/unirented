@@ -16,9 +16,9 @@
 Более подробная иформация на странице [GUI](https://miospace.github.io/unirented/gui).
 
 Страницы:
-- [Главная](https://miospace.github.io/unirented)
-- [Заказ](https://miospace.github.io/unirented/order)
-- [Личный кабинет](https://miospace.github.io/unirented/personal)
-- [Каталог](https://miospace.github.io/unirented/catalog)
-- [Анкета](https://miospace.github.io/unirented/questionnaire)
-- [Успешная публикация](https://miospace.github.io/unirented/questionnaire-complete)
+- [Главная](https://avocato0.github.io/unirented)
+- [Заказ](https://avocato0.github.io/unirented/order)
+- [Личный кабинет](https://avocato0.github.io/unirented/personal)
+- [Каталог](https://avocato0.github.io/unirented/catalog)
+- [Анкета](https://avocato0.github.io/unirented/questionnaire)
+- [Успешная публикация](https://avocato0.github.io/unirented/questionnaire-complete)
