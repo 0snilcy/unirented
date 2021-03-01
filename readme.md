@@ -13,7 +13,7 @@
 - `src/img/icons/` — svg-иконки для спрайта 
 - `build/` — собранный проект
 
-Более подробная иформация на странице [GUI](https://miospace.github.io/unirented/gui).
+Более подробная иформация на странице [GUI](https://avocato0.github.io/unirented/gui).
 
 Страницы:
 - [Главная](https://avocato0.github.io/unirented)
